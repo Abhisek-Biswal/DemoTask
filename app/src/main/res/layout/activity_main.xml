@@ -43,4 +43,17 @@
         app:layout_constraintStart_toStartOf="@+id/profileScreenBtn"
         app:layout_constraintTop_toBottomOf="@+id/profileScreenBtn"
         />
+
+    <Button
+        android:id="@+id/extendedbtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
+        android:background="@color/purple_700"
+        android:padding="5dp"
+        android:text="Extended FAB Button"
+        app:layout_constraintEnd_toEndOf="@+id/viewBtn"
+        app:layout_constraintStart_toStartOf="@+id/viewBtn"
+        app:layout_constraintTop_toBottomOf="@+id/viewBtn"
+        />
 </androidx.constraintlayout.widget.ConstraintLayout>
