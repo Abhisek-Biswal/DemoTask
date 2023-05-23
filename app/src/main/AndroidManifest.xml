@@ -12,7 +12,22 @@
         android:theme="@style/Theme.MyApplication"
         tools:targetApi="31">
         <activity
+            android:name=".CouroutineTask"
+            android:exported="false" />
+        <activity
+            android:name=".CouroutineTask4"
+            android:exported="false" />
+        <activity
+            android:name=".CouroutinesTask3"
+            android:exported="false" />
+        <activity
+            android:name=".CouroutineTask2"
+            android:exported="false" />
+        <activity
             android:name=".snackbar_fab"
+            android:exported="false" />
+        <activity
+            android:name=".couroutines"
             android:exported="false" />
         <activity
             android:name=".drawable"

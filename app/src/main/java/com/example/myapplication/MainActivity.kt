@@ -1,6 +1,4 @@
 package com.example.myapplication
-
-
 import android.annotation.SuppressLint
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -9,6 +7,7 @@ import android.widget.Button
 import com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
 
 class MainActivity : AppCompatActivity() {
+
 
 
     @SuppressLint("MissingInflatedId")
@@ -34,6 +33,11 @@ class MainActivity : AppCompatActivity() {
         var extendedfabbtn: Button = findViewById<Button>(R.id.extendedbtn)
         extendedfabbtn.setOnClickListener {
             val intent = Intent(this,snackbar_fab::class.java)
+            startActivity(intent)
+        }
+        var couroutineButton: Button = findViewById(R.id.couroutineTask)
+        couroutineButton.setOnClickListener {
+            val intent= Intent(this,CouroutineTask::class.java)
             startActivity(intent)
         }
     }
