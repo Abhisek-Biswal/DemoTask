@@ -1,6 +1,16 @@
 <resources>
     <string name="app_name">My Application</string>
     <string name="selected_item">Selected item:</string>
+    <string name="register_screen">Register Screen</string>
+    <string name="profile_screen">Profile Screen</string>
+    <string name="view_screen">View Screen</string>
+    <string name="extended_fab_button">Extended FAB Button</string>
+    <string name="multi_threading_tasks">Multi Threading Tasks</string>
+    <string name="drawable_task">Drawable Task</string>
+    <string name="room_database_task">Room Database TasK</string>
+    <string name="enter_the_email">Enter the Email</string>
+    <string name="enter_password">Enter Password</string>
+    <string name="login">Login</string>
 
     <string-array name="Models">
         <item>Ferrari</item>

@@ -15,29 +15,39 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        var registerButton: Button = findViewById<Button>(R.id.registerScreenBtn)
+        val registerButton: Button = findViewById<Button>(R.id.registerScreenBtn)
         registerButton.setOnClickListener {
             val intent= Intent(this,RegisterScreen::class.java)
             startActivity(intent)
         }
-        var profileScreenButton: Button= findViewById<Button>(R.id.profileScreenBtn)
+        val profileScreenButton: Button= findViewById<Button>(R.id.profileScreenBtn)
         profileScreenButton.setOnClickListener {
             val intent= Intent(this,ProfileScreen::class.java)
             startActivity(intent)
         }
-        var viewScreenButton: Button= findViewById<Button>(R.id.viewBtn)
+        val viewScreenButton: Button= findViewById<Button>(R.id.viewBtn)
         viewScreenButton.setOnClickListener {
             val intent= Intent(this,ViewActivity::class.java)
             startActivity(intent)
         }
-        var extendedfabbtn: Button = findViewById<Button>(R.id.extendedbtn)
+        val extendedfabbtn: Button = findViewById<Button>(R.id.extendedbtn)
         extendedfabbtn.setOnClickListener {
             val intent = Intent(this,snackbar_fab::class.java)
             startActivity(intent)
         }
-        var couroutineButton: Button = findViewById(R.id.couroutineTask)
+        val couroutineButton: Button = findViewById(R.id.couroutineTask)
         couroutineButton.setOnClickListener {
             val intent= Intent(this,CouroutineTask::class.java)
+            startActivity(intent)
+        }
+        val drawableTask: Button = findViewById(R.id.drawable_task)
+        drawableTask.setOnClickListener {
+            val intent= Intent(this,drawable::class.java)
+            startActivity(intent)
+        }
+        val roomDatabaseBtn: Button = findViewById(R.id.room_database_task)
+        roomDatabaseBtn.setOnClickListener {
+            val intent= Intent(this,SignUp::class.java)
             startActivity(intent)
         }
     }

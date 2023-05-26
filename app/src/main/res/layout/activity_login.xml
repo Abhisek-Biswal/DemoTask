@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".LoginActivity">
+
+    <TextView
+        android:id="@+id/txt_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Login"
+        android:backgroundTint="@color/black"
+        android:gravity="center"
+        app:layout_constraintBottom_toTopOf="@+id/edt_text"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_margin="50dp"
+        android:textSize="40sp"
+        android:textStyle="bold"/>
+
+    <EditText
+        android:id="@+id/edt_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/txt_view"
+        app:layout_constraintLeft_toLeftOf="@id/txt_view"
+        app:layout_constraintRight_toRightOf="@id/txt_view"
+        app:layout_constraintBottom_toTopOf="@+id/edt_text1"
+        android:hint="@string/enter_the_email"
+        style="@style/CustomEditText"
+        android:inputType="textEmailAddress"
+      />
+
+    <EditText
+        android:id="@+id/edt_text1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/enter_password"
+        style="@style/CustomEditText"
+        app:layout_constraintTop_toBottomOf="@+id/edt_text"
+        app:layout_constraintEnd_toEndOf="@+id/edt_text"
+        app:layout_constraintStart_toStartOf="@+id/edt_text"
+        app:layout_constraintBottom_toTopOf="@+id/button"
+        android:inputType="textPassword"
+        />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/edt_text1"
+        android:text="@string/login"
+        app:layout_constraintStart_toStartOf="@+id/edt_text1"
+        app:layout_constraintEnd_toEndOf="@+id/edt_text1"
+        style="@style/custom_Button"
+        app:backgroundTint="@color/darkBlue"/>
+
+    <TextView
+        android:id="@+id/txt_view1"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        app:layout_constraintTop_toBottomOf="@+id/button"
+        app:layout_constraintLeft_toLeftOf="@+id/button"
+        android:text="Don't have Account?"
+        android:layout_marginStart="50dp"
+        android:layout_marginEnd="210dp"
+        android:layout_marginTop="5dp"
+        />
+
+    <TextView
+        android:id="@+id/txt_view2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/button"
+        android:text="Sign Up"
+        app:layout_constraintLeft_toLeftOf="@id/txt_view1"
+        app:layout_constraintRight_toRightOf="@+id/button"
+        android:layout_marginStart="210dp"
+        android:layout_marginEnd="50dp"
+        android:layout_marginTop="5dp"
+        android:textStyle="bold"/>
+</androidx.constraintlayout.widget.ConstraintLayout>

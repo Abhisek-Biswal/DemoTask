@@ -13,7 +13,7 @@
         android:layout_marginTop="68dp"
         android:background="@color/purple_700"
         android:padding="5dp"
-        android:text="Register Screen"
+        android:text="@string/register_screen"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -25,7 +25,7 @@
         android:layout_marginTop="28dp"
         android:background="@color/purple_700"
         android:padding="5dp"
-        android:text="Profile Screen"
+        android:text="@string/profile_screen"
         app:layout_constraintEnd_toEndOf="@+id/registerScreenBtn"
         app:layout_constraintStart_toStartOf="@+id/registerScreenBtn"
         app:layout_constraintTop_toBottomOf="@+id/registerScreenBtn"
@@ -38,7 +38,7 @@
         android:layout_marginTop="28dp"
         android:background="@color/purple_700"
         android:padding="5dp"
-        android:text="View Screen"
+        android:text="@string/view_screen"
         app:layout_constraintEnd_toEndOf="@+id/profileScreenBtn"
         app:layout_constraintStart_toStartOf="@+id/profileScreenBtn"
         app:layout_constraintTop_toBottomOf="@+id/profileScreenBtn"
@@ -51,7 +51,7 @@
         android:layout_marginTop="28dp"
         android:background="@color/purple_700"
         android:padding="5dp"
-        android:text="Extended FAB Button"
+        android:text="@string/extended_fab_button"
         app:layout_constraintEnd_toEndOf="@+id/viewBtn"
         app:layout_constraintStart_toStartOf="@+id/viewBtn"
         app:layout_constraintTop_toBottomOf="@+id/viewBtn"
@@ -64,12 +64,36 @@
         android:layout_marginTop="28dp"
         android:background="@color/purple_700"
         android:padding="5dp"
-        android:text="Multi Threading Tasks"
+        android:text="@string/multi_threading_tasks"
         app:layout_constraintEnd_toEndOf="@+id/extendedbtn"
         app:layout_constraintStart_toStartOf="@+id/extendedbtn"
         app:layout_constraintTop_toBottomOf="@+id/extendedbtn"
         />
 
+    <Button
+        android:id="@+id/drawable_task"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
+        android:background="@color/purple_700"
+        android:padding="5dp"
+        android:text="@string/drawable_task"
+        app:layout_constraintEnd_toEndOf="@+id/couroutineTask"
+        app:layout_constraintStart_toStartOf="@+id/couroutineTask"
+        app:layout_constraintTop_toBottomOf="@+id/couroutineTask"
+        />
 
+    <Button
+        android:id="@+id/room_database_task"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
+        android:background="@color/purple_700"
+        android:padding="5dp"
+        android:text="@string/room_database_task"
+        app:layout_constraintEnd_toEndOf="@+id/drawable_task"
+        app:layout_constraintStart_toStartOf="@+id/drawable_task"
+        app:layout_constraintTop_toBottomOf="@+id/drawable_task"
+        />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

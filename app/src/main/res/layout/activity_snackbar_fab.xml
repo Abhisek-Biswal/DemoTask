@@ -13,7 +13,9 @@
         android:layout_height="wrap_content"
         android:layout_marginRight="30dp"
         android:layout_marginBottom="15dp"
-        android:src="@drawable/baseline_add_24"
+        android:src="@drawable/ic_add"
+        app:backgroundTint="@color/red"
+        android:tintMode="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintRight_toRightOf="parent" />
 
@@ -24,7 +26,10 @@
         android:layout_marginLeft="30dp"
         android:layout_marginBottom="15dp"
         android:text="Action"
-        app:icon="@drawable/baseline_add_24"
+        android:textColor="@color/white"
+        app:icon="@drawable/ic_add"
+        app:backgroundTint="@color/red"
+        android:tintMode="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent" />
 

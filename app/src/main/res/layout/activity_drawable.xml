@@ -6,6 +6,18 @@
     android:layout_height="match_parent"
     tools:context=".drawable">
 
-
+    <ImageView
+        android:id="@+id/image_view"
+        android:layout_width="350dp"
+        android:layout_height="300dp"
+        android:padding="10dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/car_name"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.491"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
