@@ -47,8 +47,14 @@ class MainActivity : AppCompatActivity() {
         }
         val roomDatabaseBtn: Button = findViewById(R.id.room_database_task)
         roomDatabaseBtn.setOnClickListener {
-            val intent= Intent(this,SignUp::class.java)
+            val intent= Intent(this,SplashScreen::class.java)
             startActivity(intent)
         }
+        val jsonParsingBtn: Button = findViewById(R.id.json_parsing_task)
+        jsonParsingBtn.setOnClickListener {
+            val intent= Intent(this,JsonParsingPractice::class.java)
+            startActivity(intent)
+        }
+
     }
 }

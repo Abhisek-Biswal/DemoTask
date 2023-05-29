@@ -96,4 +96,17 @@
         app:layout_constraintTop_toBottomOf="@+id/drawable_task"
         />
 
+    <Button
+        android:id="@+id/json_parsing_task"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
+        android:background="@color/purple_700"
+        android:padding="5dp"
+        android:text="Json Parsing Task"
+        app:layout_constraintEnd_toEndOf="@+id/room_database_task"
+        app:layout_constraintStart_toStartOf="@+id/room_database_task"
+        app:layout_constraintTop_toBottomOf="@+id/room_database_task"
+        />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
