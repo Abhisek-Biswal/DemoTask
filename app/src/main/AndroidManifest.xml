@@ -11,6 +11,14 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MyApplication"
         tools:targetApi="31">
+
+
+
+
+
+        <activity
+            android:name=".MapActivity"
+            android:exported="false"/>
         <activity
             android:name=".JsonParsingPractice"
             android:exported="false" />
@@ -65,6 +73,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <!--        The API Key for Google Maps-based APIs-->
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="@string/my_map_api_key" />
     </application>
 
 </manifest>

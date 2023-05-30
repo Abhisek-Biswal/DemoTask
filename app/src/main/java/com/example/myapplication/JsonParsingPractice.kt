@@ -16,23 +16,24 @@ class JsonParsingPractice : AppCompatActivity() {
 
     val storeJson = "{\"id\":6,\"title\":\"Dave wasn't exactly sure how he had ended up\",\"body\":\"Dave wasn't exactly sure how he had ended up in this predicament. He ran through all the events that had lead to this current situation and it still didn't make sense. He wanted to spend some time to try and make sense of it all, but he had higher priorities at the moment. The first was how to get out of his current situation of being naked in a tree with snow falling all around and no way for him to get down.\",\"userId\":47,\"tags\":[\"english\",\"classic\",\"american\"],\"reactions\":3}"
 
-
-    var jsonObject = JSONObject(storeJson)
+    var jsonObject: JSONObject = JSONObject(storeJson)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_json_parsing_practice)
 
-        println(jsonObject.toString())
 
-//        id= jsonObject.getInt("id")
-//        System.out.println(id)
-//
-//        title= jsonObject.getString("title")
-//        println(title)
-//
-//        body= jsonObject.getString("body")
-//
-//        userId = jsonObject.getInt("userId")
+
+        id= jsonObject.getInt("id")
+        println(id)
+
+        title= jsonObject.getString("title")
+        println(title)
+
+        body= jsonObject.getString("body")
+        println(body)
+        userId = jsonObject.getInt("userId")
+        println(userId)
+
 
 
 

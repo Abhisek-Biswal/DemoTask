@@ -12,6 +12,10 @@
     <string name="enter_password">Enter Password</string>
     <string name="login">Login</string>
 
+<!--    For Map-->
+    <string name="app_name_for_map">Map Example</string>
+    <string name="my_map_api_key">AIzaSyCMXWYKMmAqYpFv6s53Ka7XPqpMho96t_A</string>
+
     <string-array name="Models">
         <item>Ferrari</item>
         <item>Lamborgini</item>
@@ -21,3 +25,6 @@
 
     </string-array>
 </resources>
+
+
+

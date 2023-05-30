@@ -15,7 +15,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val registerButton: Button = findViewById<Button>(R.id.registerScreenBtn)
+        val registerButton = findViewById<Button>(R.id.registerScreenBtn)
         registerButton.setOnClickListener {
             val intent= Intent(this,RegisterScreen::class.java)
             startActivity(intent)
@@ -56,5 +56,8 @@ class MainActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
+        findViewById<Button>(R.id.map_demo).setOnClickListener {
+            startActivity(Intent(this,MapActivity::class.java))
+        }
     }
 }
