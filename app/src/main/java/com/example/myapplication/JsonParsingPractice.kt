@@ -2,19 +2,18 @@ package com.example.myapplication
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.google.gson.Gson
 import org.json.JSONObject
+import java.util.Arrays
 
 class JsonParsingPractice : AppCompatActivity() {
 
-    var  id = 0
-    var  title = ""
-    var  body = ""
-    var  userId = 0
-    var  tags= listOf<String>()
-    var read = 0
+
 
 
     val storeJson = "{\"id\":6,\"title\":\"Dave wasn't exactly sure how he had ended up\",\"body\":\"Dave wasn't exactly sure how he had ended up in this predicament. He ran through all the events that had lead to this current situation and it still didn't make sense. He wanted to spend some time to try and make sense of it all, but he had higher priorities at the moment. The first was how to get out of his current situation of being naked in a tree with snow falling all around and no way for him to get down.\",\"userId\":47,\"tags\":[\"english\",\"classic\",\"american\"],\"reactions\":3}"
+
+    val storeJson2 = "{\"id\":6,\"title\":\"Dave wasn't exactly sure how he had ended up\",\"body\":\"Dave wasn't exactly sure how he had ended up in this predicament. He ran through all the events that had lead to this current situation and it still didn't make sense. He wanted to spend some time to try and make sense of it all, but he had higher priorities at the moment. The first was how to get out of his current situation of being naked in a tree with snow falling all around and no way for him to get down.\",\"userId\":47,\"tags\":[\"english\",\"classic\",\"american\"],\"reactions\":3}"
 
     var jsonObject: JSONObject = JSONObject(storeJson)
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -23,19 +22,26 @@ class JsonParsingPractice : AppCompatActivity() {
 
 
 
-        id= jsonObject.getInt("id")
-        println(id)
+        val id= jsonObject.getInt("id")
+        println("id:" +id)
 
-        title= jsonObject.getString("title")
-        println(title)
+        val title= jsonObject.getString("title")
+        println("title:" +title)
 
-        body= jsonObject.getString("body")
-        println(body)
-        userId = jsonObject.getInt("userId")
-        println(userId)
+        println("Body:" +jsonObject.getString("body"))
+
+        println( "userId:" +jsonObject.getInt("userId"))
+
+        println("Tags:" +jsonObject.getJSONArray("tags"))
+
+        println("reactions:" +jsonObject.getString("reactions"))
 
 
+        val fromJson = Gson().fromJson(storeJson2,StoreJson::class.java)
+        println(fromJson)
 
+        val toJson = Gson().toJson(storeJson)
+        println(toJson)
 
 
 
