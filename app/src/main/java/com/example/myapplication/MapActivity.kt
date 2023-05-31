@@ -16,7 +16,7 @@ import com.google.android.gms.maps.SupportMapFragment
 import com.google.android.gms.maps.model.*
 import java.util.*
 
-class MapActivity : AppCompatActivity() , OnMapReadyCallback, GoogleMap.OnMarkerClickListener {
+abstract class MapActivity : AppCompatActivity() , OnMapReadyCallback, GoogleMap.OnMarkerClickListener {
 
     var currentMarker : Marker? = null
     private lateinit var googleMap: GoogleMap
@@ -86,42 +86,42 @@ class MapActivity : AppCompatActivity() , OnMapReadyCallback, GoogleMap.OnMarker
 //        googleMap.setMapStyle(MapStyleOptions.loadRawResourceStyle(this,R.raw.map_style))
 //        googleMap.setTrafficEnabled(true);
 
-        val latLong = LatLng(currentLocation?.latitude!!,currentLocation?.longitude!!)
-        drawMarker(latLong)
+        //val latLong = LatLng(currentLocation?.latitude!!,currentLocation?.longitude!!)
+        //drawMarker(latLong)
 
-        googleMap.setOnMarkerDragListener(object: GoogleMap.OnMarkerDragListener)
-        fun onMarkerDrag(p0: Marker?) {
-
-        }
-        override fun onMarkerDragEnd(p0: Marker?) {
-
-            if(currentMarker!=null){
-                currentMarker?.remove()
-
-                val newLatLng=LatLng(p0?.position!!.latitude,p0?.position!!.latitude)
-                drawMarker(newLatLng)
-            }
-        }
-         fun onMarkerDragStart(m1: Marker?) {
-
-        }
-
-    }
-    private fun drawMarker(latLong: LatLng){
-        val markerOptions=MarkerOptions().position(latLong).title("I am Abhisek")
-            .snippet.(getAddress(latLong.latitude, latLong.latitude)).draggable(true)
-
-        googleMap.animateCamera(CameraUpdateFactory.newLatLngZoom(latLong))
-        googleMap.animateCamera(CameraUpdateFactory.newLatLngZoom(latLong,15f))
-        currentMarker=googleMap.addMarker(markerOptions)
-        currentMarker.showInfoWindow()
+//        googleMap.setOnMarkerDragListener(object: GoogleMap.OnMarkerDragListener)
+//        fun onMarkerDrag(p0: Marker?) {
+//
+//        }
+//        override fun onMarkerDragEnd(p0: Marker?) {
+//
+//            if(currentMarker!=null){
+//                currentMarker?.remove()
+//
+//                val newLatLng=LatLng(p0?.position!!.latitude,p0?.position!!.latitude)
+//                drawMarker(newLatLng)
+//            }
+//        }
+//         fun onMarkerDragStart(m1: Marker?) {
+//
+//        }
 
     }
-    private fun getAddress(lat: Double,lon: Double): String?{
-        val geocoder = Geocoder(this, Locale.getDefault())
-        val address = geocoder.getFromLocation(lat,lon,1)
-        return address[0].getAddressLine(0).toString()
-    }
+    //private fun drawMarker(latLong: LatLng){
+        //val markerOptions=MarkerOptions().position(latLong).title("I am Abhisek")
+            //.snippet.(getAddress(latLong.latitude, latLong.latitude)).draggable(true)
+
+        //googleMap.animateCamera(CameraUpdateFactory.newLatLngZoom(latLong))
+        //googleMap.animateCamera(CameraUpdateFactory.newLatLngZoom(latLong,15f))
+        //currentMarker=googleMap.addMarker(markerOptions)
+        //currentMarker.showInfoWindow()
+
+    //}
+//    private fun getAddress(lat: Double,lon: Double): String?{
+//        val geocoder = Geocoder(this, Locale.getDefault())
+//        val address = geocoder.getFromLocation(lat,lon,1)
+//        //return address[0].getAddressLine(0).toString()
+//    }
 
 
 

@@ -59,5 +59,8 @@ class MainActivity : AppCompatActivity() {
         findViewById<Button>(R.id.map_demo).setOnClickListener {
             startActivity(Intent(this,MapActivity::class.java))
         }
+        findViewById<Button>(R.id.retrofit_demo).setOnClickListener {
+            startActivity(Intent(this,Retrofrit_Demo::class.java))
+        }
     }
 }

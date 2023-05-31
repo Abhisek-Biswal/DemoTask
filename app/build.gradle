@@ -59,7 +59,13 @@ dependencies {
     implementation("androidx.room:room-ktx:$room_version")
 
     //gson Dependency
-
     implementation 'com.google.code.gson:gson:2.10.1'
+
+    //retrofit dependency
+
+    implementation 'com.squareup.retrofit2:retrofit:(insert latest version)'
+
+    //gson converter
+    implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
 
 }
