@@ -5,7 +5,8 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="horizontal"
-    android:layout_gravity="center_vertical">
+    android:layout_gravity="center_vertical"
+    >
 
     <com.google.android.material.chip.Chip
         android:layout_width="match_parent"
@@ -14,7 +15,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         android:id="@+id/chip_view"
-        app:chipBackgroundColor="@color/white"
+        android:background="@drawable/custom_button"
+
         >
 
     </com.google.android.material.chip.Chip>
@@ -31,6 +33,7 @@
         app:layout_constraintTop_toTopOf="@id/chip_view"
         app:layout_constraintBottom_toBottomOf="@id/chip_view"
         app:layout_constraintLeft_toLeftOf="@id/chip_view"
+        android:scaleType="fitCenter"
         />
 
     <TextView
@@ -61,7 +64,7 @@
         android:id="@+id/textView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Description"
+        android:text="Price"
         tools:layout_editor_absoluteX="306dp"
         tools:layout_editor_absoluteY="99dp"
         app:layout_constraintStart_toStartOf="@id/imageView"
