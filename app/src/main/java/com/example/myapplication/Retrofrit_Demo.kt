@@ -45,7 +45,7 @@ class Retrofrit_Demo : AppCompatActivity() {
         // below line is to create an instance for our retrofit api class.
         val retrofitAPI = retrofit.create(ProductApi::class.java)
 
-        val call: Call<ProductList?>? = retrofitAPI.getProducts()
+        val call: Call<ProductList> = retrofitAPI.getProducts()
 
         // on below line we are making a call.
         call!!.enqueue(object : Callback<ProductList?> {
