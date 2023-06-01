@@ -74,12 +74,19 @@
 
     <androidx.viewpager2.widget.ViewPager2
         android:id="@+id/products_img_view"
+<<<<<<< HEAD
         android:layout_width="wrap_content"
+=======
+        android:layout_width="match_parent"
+>>>>>>> origin/main
         android:layout_height="200dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/stock_txtvw" />
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> origin/main
 </androidx.constraintlayout.widget.ConstraintLayout>
