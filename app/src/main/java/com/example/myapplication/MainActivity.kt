@@ -56,11 +56,15 @@ class MainActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
-        findViewById<Button>(R.id.map_demo).setOnClickListener {
-            startActivity(Intent(this,MapActivity::class.java))
-        }
+//        findViewById<Button>(R.id.map_demo).setOnClickListener {
+//            startActivity(Intent(this,MapActivity::class.java))
+//        }
         findViewById<Button>(R.id.retrofit_demo).setOnClickListener {
             startActivity(Intent(this,Retrofrit_Demo::class.java))
         }
+        findViewById<Button>(R.id.fcm_task).setOnClickListener {
+            startActivity(Intent(this,FCMTask::class.java))
+        }
+
     }
 }
