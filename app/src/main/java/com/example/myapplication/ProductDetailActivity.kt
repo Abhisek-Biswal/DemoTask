@@ -1,9 +1,12 @@
 package com.example.myapplication
 
 import android.annotation.SuppressLint
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.ImageView
 import android.widget.TextView
+import androidx.appcompat.app.AppCompatActivity
+import androidx.viewpager.widget.ViewPager
+import com.squareup.picasso.Picasso
 
 class ProductDetailActivity : AppCompatActivity() {
     @SuppressLint("MissingInflatedId")
@@ -11,18 +14,34 @@ class ProductDetailActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_product_detail)
 
-        lateinit var productData : Product
+
 
         if(intent.extras != null){
-            productData  = intent.getSerializableExtra("details") as Product
-        }
+            val productDetail = intent.getSerializableExtra("Product_Data") as Product
+            val imageproduct = findViewById<ImageView>(R.id.imgv1)
+            val title = findViewById<TextView>(R.id.tvprotitle)
+            val discount = findViewById<TextView>(R.id.tvprodiscount)
+            val stock = findViewById<TextView>(R.id.tvprostock)
+            val decrp = findViewById<TextView>(R.id.tvprodescription)
+            val price = findViewById<TextView>(R.id.tvproprice)
+            val rating = findViewById<TextView>(R.id.tvprorating)
+            val brand = findViewById<TextView>(R.id.tvprobrand)
+            val category = findViewById<TextView>(R.id.tvprocategory)
+            val viewpagerimg = findViewById<ViewPager>(R.id.viewpagerproimages)
 
-        findViewById<TextView>(R.id.product_detail_title_txtvw).text = productData.title
-        findViewById<TextView>(R.id.description_txtvw).text = "Description : \n "+productData.description
-        findViewById<TextView>(R.id.price_txtvw).text = "Price : $"+productData.price.toString()
-        findViewById<TextView>(R.id.discountpercentage_txtvw).text = "Discount "+productData.discountPercentage.toString()+"%"
-        findViewById<TextView>(R.id.stock_txtvw).text = "Stock : "+productData.stock.toString()
-        findViewById<TextView>(R.id.brand_txtvw).text = "Company Name "+productData.brand
+
+            title.text = productDetail.title
+            discount.text = productDetail.discountPercentage.toString()
+            stock.text = productDetail.stock.toString()
+            decrp.text = productDetail.description
+            price.text = productDetail.price.toString()
+            rating.text = productDetail.rating.toString()
+            brand.text = productDetail.brand
+            category.text = productDetail.category
+            val  mypagerAdapter = ImageAdapter(this,productDetail.images)
+            viewpagerimg.adapter = mypagerAdapter
+            Picasso.get().load(productDetail.thumbnail).into(imageproduct)
+        }
 
 
 

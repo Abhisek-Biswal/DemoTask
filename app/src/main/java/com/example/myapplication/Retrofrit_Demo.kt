@@ -1,9 +1,9 @@
 package com.example.myapplication
 
-import androidx.appcompat.app.AppCompatActivity
+import android.content.Intent
 import android.os.Bundle
-import android.view.View.OnClickListener
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.RecyclerView
 import retrofit2.Call
 import retrofit2.Callback
@@ -49,16 +49,24 @@ class Retrofrit_Demo : AppCompatActivity() {
         val call: Call<ProductList> = retrofitAPI.getProducts()
 
         // on below line we are making a call.
-        call!!.enqueue(object : Callback<ProductList?> {
+        call.enqueue(object : Callback<ProductList?> {
             override fun onResponse(call: Call<ProductList?>, response: Response<ProductList?>) {
                 val retrofit2= response.body()?.let {ProductAdapter(it.products)}
                 recyclerView.adapter = retrofit2
 
-
-
+                retrofit2!!.setOnClickListener(object : ProductAdapter.OnClickListener {
+                    override fun onClick(position: Int, productlist: MutableList<Product>) {
+                        val intent = Intent(this@Retrofrit_Demo, ProductDetailActivity::class.java)
+                        val products = productlist[position]
+                        val data = Product(products.id,products.title,products.description,products.price,
+                            products.discountPercentage,products.rating,products.stock,products.brand,
+                            products.category,products.thumbnail,products.images)
+                       // intent.putExtra("Product_Data",data)
+                        //intent.putExtra("Product_Data",data)
+                        startActivity(intent)
+                    }
+                })
             }
-
-
             override fun onFailure(call: Call<ProductList?>, t: Throwable) {
                 // displaying an error message in toast
                 Toast.makeText(this@Retrofrit_Demo, "Fail to get the data..", Toast.LENGTH_SHORT)
@@ -67,6 +75,10 @@ class Retrofrit_Demo : AppCompatActivity() {
         })
     }
 }
+
+
+
+
 
 
 

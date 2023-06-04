@@ -1,162 +1,211 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <Button
-        android:id="@+id/registerScreenBtn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:background="@color/purple_700"
-        android:padding="5dp"
-        android:text="@string/register_screen"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
-        android:id="@+id/profileScreenBtn"
-        android:layout_width="148dp"
-        android:layout_height="46dp"
-        android:layout_marginTop="20dp"
-        android:background="@color/purple_700"
-        android:padding="5dp"
-        android:text="@string/profile_screen"
-        app:layout_constraintEnd_toEndOf="@+id/registerScreenBtn"
-        app:layout_constraintStart_toStartOf="@+id/registerScreenBtn"
-        app:layout_constraintTop_toBottomOf="@+id/registerScreenBtn"
-       />
+        
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
-    <Button
-        android:id="@+id/viewBtn"
-        android:layout_width="148dp"
-        android:layout_height="46dp"
-        android:layout_marginTop="20dp"
-        android:background="@color/purple_700"
-        android:padding="5dp"
-        android:text="@string/view_screen"
-        app:layout_constraintEnd_toEndOf="@+id/profileScreenBtn"
-        app:layout_constraintStart_toStartOf="@+id/profileScreenBtn"
-        app:layout_constraintTop_toBottomOf="@+id/profileScreenBtn"
-        />
 
-    <Button
-        android:id="@+id/extendedbtn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:background="@color/purple_700"
-        android:padding="5dp"
-        android:text="@string/extended_fab_button"
-        app:layout_constraintEnd_toEndOf="@+id/viewBtn"
-        app:layout_constraintStart_toStartOf="@+id/viewBtn"
-        app:layout_constraintTop_toBottomOf="@+id/viewBtn"
-        />
+        <Button
+            android:id="@+id/registerScreenBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:background="@color/purple_700"
+            android:padding="5dp"
+            android:text="@string/register_screen"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
-        android:id="@+id/couroutineTask"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:background="@color/purple_700"
-        android:padding="5dp"
-        android:text="@string/multi_threading_tasks"
-        app:layout_constraintEnd_toEndOf="@+id/extendedbtn"
-        app:layout_constraintStart_toStartOf="@+id/extendedbtn"
-        app:layout_constraintTop_toBottomOf="@+id/extendedbtn"
-        />
+        <Button
+            android:id="@+id/profileScreenBtn"
+            android:layout_width="148dp"
+            android:layout_height="46dp"
+            android:layout_marginTop="20dp"
+            android:background="@color/purple_700"
+            android:padding="5dp"
+            android:text="@string/profile_screen"
+            app:layout_constraintEnd_toEndOf="@+id/registerScreenBtn"
+            app:layout_constraintStart_toStartOf="@+id/registerScreenBtn"
+            app:layout_constraintTop_toBottomOf="@+id/registerScreenBtn"
+           />
 
-    <Button
-        android:id="@+id/drawable_task"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:background="@color/purple_700"
-        android:padding="5dp"
-        android:text="@string/drawable_task"
-        app:layout_constraintEnd_toEndOf="@+id/couroutineTask"
-        app:layout_constraintStart_toStartOf="@+id/couroutineTask"
-        app:layout_constraintTop_toBottomOf="@+id/couroutineTask"
-        />
+        <Button
+            android:id="@+id/viewBtn"
+            android:layout_width="148dp"
+            android:layout_height="46dp"
+            android:layout_marginTop="20dp"
+            android:background="@color/purple_700"
+            android:padding="5dp"
+            android:text="@string/view_screen"
+            app:layout_constraintEnd_toEndOf="@+id/profileScreenBtn"
+            app:layout_constraintStart_toStartOf="@+id/profileScreenBtn"
+            app:layout_constraintTop_toBottomOf="@+id/profileScreenBtn"
+            />
 
-    <Button
-        android:id="@+id/room_database_task"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:background="@color/purple_700"
-        android:padding="5dp"
-        android:text="@string/room_database_task"
-        app:layout_constraintEnd_toEndOf="@+id/drawable_task"
-        app:layout_constraintStart_toStartOf="@+id/drawable_task"
-        app:layout_constraintTop_toBottomOf="@+id/drawable_task"
-        />
+        <Button
+            android:id="@+id/extendedbtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:background="@color/purple_700"
+            android:padding="5dp"
+            android:text="@string/extended_fab_button"
+            app:layout_constraintEnd_toEndOf="@+id/viewBtn"
+            app:layout_constraintStart_toStartOf="@+id/viewBtn"
+            app:layout_constraintTop_toBottomOf="@+id/viewBtn"
+            />
 
-    <Button
-        android:id="@+id/json_parsing_task"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:background="@color/purple_700"
-        android:padding="5dp"
-        android:text="Json Parsing Task"
-        app:layout_constraintEnd_toEndOf="@+id/room_database_task"
-        app:layout_constraintStart_toStartOf="@+id/room_database_task"
-        app:layout_constraintTop_toBottomOf="@+id/room_database_task"
-        />
+        <Button
+            android:id="@+id/couroutineTask"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:background="@color/purple_700"
+            android:padding="5dp"
+            android:text="@string/multi_threading_tasks"
+            app:layout_constraintEnd_toEndOf="@+id/extendedbtn"
+            app:layout_constraintStart_toStartOf="@+id/extendedbtn"
+            app:layout_constraintTop_toBottomOf="@+id/extendedbtn"
+            />
 
-<!--    <Button-->
-<!--        android:id="@+id/map_demo"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:layout_marginTop="20dp"-->
-<!--        android:background="@color/purple_700"-->
-<!--        android:padding="5dp"-->
-<!--        android:text="Map Task"-->
-<!--        app:layout_constraintEnd_toEndOf="@+id/json_parsing_task"-->
-<!--        app:layout_constraintHorizontal_bias="0.506"-->
-<!--        app:layout_constraintStart_toStartOf="@+id/json_parsing_task"-->
-<!--        app:layout_constraintTop_toBottomOf="@+id/json_parsing_task" />-->
+        <Button
+            android:id="@+id/drawable_task"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:background="@color/purple_700"
+            android:padding="5dp"
+            android:text="@string/drawable_task"
+            app:layout_constraintEnd_toEndOf="@+id/couroutineTask"
+            app:layout_constraintStart_toStartOf="@+id/couroutineTask"
+            app:layout_constraintTop_toBottomOf="@+id/couroutineTask"
+            />
 
-<!--    <Button-->
-<!--        android:id="@+id/custom_drawable_task"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:layout_marginTop="28dp"-->
-<!--        android:background="@color/purple_700"-->
-<!--        android:padding="5dp"-->
-<!--        android:text="Custom Drawable Task"-->
-<!--        app:layout_constraintEnd_toEndOf="@+id/room_database_task"-->
-<!--        app:layout_constraintStart_toStartOf="@+id/room_database_task"-->
-<!--        app:layout_constraintTop_toBottomOf="@+id/room_database_task"-->
-<!--        />-->
-    <Button
-        android:id="@+id/retrofit_demo"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:background="@color/purple_700"
-        android:padding="5dp"
-        android:text="Retrofit Task"
-        app:layout_constraintEnd_toEndOf="@+id/json_parsing_task"
-        app:layout_constraintHorizontal_bias="0.506"
-        app:layout_constraintStart_toStartOf="@+id/json_parsing_task"
-        app:layout_constraintTop_toBottomOf="@+id/json_parsing_task" />
+        <Button
+            android:id="@+id/room_database_task"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:background="@color/purple_700"
+            android:padding="5dp"
+            android:text="@string/room_database_task"
+            app:layout_constraintEnd_toEndOf="@+id/drawable_task"
+            app:layout_constraintStart_toStartOf="@+id/drawable_task"
+            app:layout_constraintTop_toBottomOf="@+id/drawable_task"
+            />
 
-    <Button
-        android:id="@+id/fcm_task"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:background="@color/purple_700"
-        android:padding="5dp"
-        android:text="Push Notification"
-        app:layout_constraintEnd_toEndOf="@+id/retrofit_demo"
-        app:layout_constraintHorizontal_bias="0.506"
-        app:layout_constraintStart_toStartOf="@+id/retrofit_demo"
-        app:layout_constraintTop_toBottomOf="@+id/retrofit_demoA" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <Button
+            android:id="@+id/json_parsing_task"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:background="@color/purple_700"
+            android:padding="5dp"
+            android:text="Json Parsing Task"
+            app:layout_constraintEnd_toEndOf="@+id/room_database_task"
+            app:layout_constraintStart_toStartOf="@+id/room_database_task"
+            app:layout_constraintTop_toBottomOf="@+id/room_database_task"
+            />
+
+
+        <Button
+            android:id="@+id/retrofit_demo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:background="@color/purple_700"
+            android:padding="5dp"
+            android:text="Retrofit Task"
+            app:layout_constraintEnd_toEndOf="@+id/json_parsing_task"
+            app:layout_constraintHorizontal_bias="0.506"
+            app:layout_constraintStart_toStartOf="@+id/json_parsing_task"
+            app:layout_constraintTop_toBottomOf="@+id/json_parsing_task" />
+
+        <Button
+            android:id="@+id/fcm_task"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:background="@color/purple_700"
+            android:padding="5dp"
+            android:text="Push Notification"
+            app:layout_constraintEnd_toEndOf="@+id/retrofit_demo"
+            app:layout_constraintHorizontal_bias="0.506"
+            app:layout_constraintStart_toStartOf="@+id/retrofit_demo"
+            app:layout_constraintTop_toBottomOf="@+id/retrofit_demo" />
+
+        <Button
+            android:id="@+id/custom_drawable_task"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="28dp"
+            android:background="@color/purple_700"
+            android:padding="5dp"
+            android:text="Custom Drawable Task"
+            app:layout_constraintEnd_toEndOf="@+id/fcm_task"
+            app:layout_constraintStart_toStartOf="@+id/fcm_task"
+            app:layout_constraintTop_toBottomOf="@+id/fcm_task"
+            />
+        <Button
+            android:id="@+id/layout_task"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="28dp"
+            android:background="@color/purple_700"
+            android:padding="5dp"
+            android:text="Layout Task"
+            app:layout_constraintEnd_toEndOf="@+id/custom_drawable_task"
+            app:layout_constraintStart_toStartOf="@+id/custom_drawable_task"
+            app:layout_constraintTop_toBottomOf="@+id/custom_drawable_task"
+            />
+        <Button
+            android:id="@+id/view_pager_tablayout_task"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="28dp"
+            android:background="@color/purple_700"
+            android:padding="5dp"
+            android:text="View Pager TabLayout Task"
+            app:layout_constraintEnd_toEndOf="@+id/layout_task"
+            app:layout_constraintStart_toStartOf="@+id/layout_task"
+            app:layout_constraintTop_toBottomOf="@+id/layout_task"
+            />
+        <Button
+            android:id="@+id/map_demo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:background="@color/purple_700"
+            android:padding="5dp"
+            android:text="Map Task"
+            app:layout_constraintEnd_toEndOf="@+id/view_pager_tablayout_task"
+            app:layout_constraintStart_toStartOf="@+id/view_pager_tablayout_task"
+            app:layout_constraintTop_toBottomOf="@+id/view_pager_tablayout_task" />
+
+        <Button
+            android:id="@+id/my_drawable"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:background="@color/purple_700"
+            android:padding="5dp"
+            android:text="Drawable Task"
+            app:layout_constraintEnd_toEndOf="@+id/map_demo"
+            app:layout_constraintStart_toStartOf="@+id/map_demo"
+            app:layout_constraintTop_toBottomOf="@+id/map_demo" />
+
+
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

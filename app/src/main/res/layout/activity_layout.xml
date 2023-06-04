@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".LayoutActivity">
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_linear_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="50dp"
+        android:text="Linear Layout"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:textSize="20sp"
+        style="@style/custom_Button"
+        app:backgroundTint="@color/darkBlue"/>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_relative_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="50dp"
+        android:text="Relative Layout"
+        app:layout_constraintTop_toBottomOf="@+id/btn_linear_layout"
+        app:layout_constraintStart_toStartOf="@+id/btn_linear_layout"
+        app:layout_constraintEnd_toEndOf="@+id/btn_linear_layout"
+        android:textSize="20sp"
+        style="@style/custom_Button"
+        app:backgroundTint="@color/darkBlue"/>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_constraint_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="50dp"
+        android:text="Constraint Layout"
+        app:layout_constraintTop_toBottomOf="@+id/btn_relative_layout"
+        app:layout_constraintStart_toStartOf="@+id/btn_relative_layout"
+        app:layout_constraintEnd_toEndOf="@+id/btn_relative_layout"
+        android:textSize="20sp"
+        style="@style/custom_Button"
+        app:backgroundTint="@color/darkBlue"/>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_frame_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="50dp"
+        android:text="Frame Layout"
+        app:layout_constraintTop_toBottomOf="@+id/btn_constraint_layout"
+        app:layout_constraintStart_toStartOf="@+id/btn_constraint_layout"
+        app:layout_constraintEnd_toEndOf="@+id/btn_constraint_layout"
+        android:textSize="20sp"
+        style="@style/custom_Button"
+        app:backgroundTint="@color/darkBlue"/>
+</androidx.constraintlayout.widget.ConstraintLayout>

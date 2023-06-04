@@ -1,10 +1,9 @@
 package com.example.myapplication
 import android.annotation.SuppressLint
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
-import com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+import androidx.appcompat.app.AppCompatActivity
 
 class MainActivity : AppCompatActivity() {
 
@@ -56,15 +55,26 @@ class MainActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
-//        findViewById<Button>(R.id.map_demo).setOnClickListener {
-//            startActivity(Intent(this,MapActivity::class.java))
-//        }
+        findViewById<Button>(R.id.map_demo).setOnClickListener {
+            startActivity(Intent(this,MapActivity::class.java))
+        }
         findViewById<Button>(R.id.retrofit_demo).setOnClickListener {
             startActivity(Intent(this,Retrofrit_Demo::class.java))
         }
         findViewById<Button>(R.id.fcm_task).setOnClickListener {
             startActivity(Intent(this,FCMTask::class.java))
         }
-
+        findViewById<Button>(R.id.custom_drawable_task).setOnClickListener {
+            startActivity(Intent(this,CustomControlActivity::class.java))
+        }
+        findViewById<Button>(R.id.layout_task).setOnClickListener {
+            startActivity(Intent(this,LayoutActivityStart::class.java))
+        }
+        findViewById<Button>(R.id.view_pager_tablayout_task).setOnClickListener {
+            startActivity(Intent(this,ViewPagerAndTabLayout::class.java))
+        }
+        findViewById<Button>(R.id.my_drawable).setOnClickListener {
+            startActivity(Intent(this,MyDrawable::class.java))
+        }
     }
 }

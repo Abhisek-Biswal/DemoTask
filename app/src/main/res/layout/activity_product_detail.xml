@@ -6,80 +6,105 @@
     android:layout_height="match_parent"
     tools:context=".ProductDetailActivity">
 
-    <TextView
-        android:id="@+id/product_detail_title_txtvw"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textColor="@color/darkBlue"
-        android:textSize="30sp"
-        app:layout_constraintBottom_toTopOf="@+id/description_txtvw"
-        app:layout_constraintEnd_toEndOf="parent"
+    <ImageView
+        android:id="@+id/imgv1"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/description_txtvw"
+        android:id="@+id/tvprotitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textColor="@color/black"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toTopOf="@+id/price_txtvw"
-        app:layout_constraintEnd_toEndOf="@+id/product_detail_title_txtvw"
-        app:layout_constraintStart_toStartOf="@+id/product_detail_title_txtvw"
-        app:layout_constraintTop_toBottomOf="@id/product_detail_title_txtvw"
-        app:layout_constraintVertical_chainStyle="packed" />
-
-    <TextView
-        android:id="@+id/price_txtvw"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textColor="@color/black"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toTopOf="@+id/discountpercentage_txtvw"
-        app:layout_constraintEnd_toEndOf="@+id/description_txtvw"
-        app:layout_constraintStart_toStartOf="@+id/description_txtvw"
-        app:layout_constraintTop_toBottomOf="@+id/description_txtvw" />
-
-    <TextView
-        android:id="@+id/discountpercentage_txtvw"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textColor="@color/black"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toTopOf="@+id/brand_txtvw"
-        app:layout_constraintEnd_toEndOf="@+id/price_txtvw"
-        app:layout_constraintStart_toStartOf="@+id/price_txtvw"
-        app:layout_constraintTop_toBottomOf="@+id/price_txtvw" />
-
-    <TextView
-        android:id="@+id/stock_txtvw"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textColor="@color/black"
-        android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="@+id/brand_txtvw"
-        app:layout_constraintStart_toStartOf="@+id/brand_txtvw"
-        app:layout_constraintTop_toBottomOf="@+id/brand_txtvw" />
-
-    <TextView
-        android:id="@+id/brand_txtvw"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textColor="@color/black"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toTopOf="@+id/stock_txtvw"
-        app:layout_constraintEnd_toEndOf="@+id/discountpercentage_txtvw"
-        app:layout_constraintStart_toStartOf="@+id/discountpercentage_txtvw"
-        app:layout_constraintTop_toBottomOf="@+id/discountpercentage_txtvw" />
-
-    <androidx.viewpager2.widget.ViewPager2
-        android:id="@+id/products_img_view"
-        android:layout_width="wrap_content"
-        android:layout_height="200dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:text="title"
+        android:layout_marginTop="10dp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/stock_txtvw" />
+        app:layout_constraintTop_toBottomOf="@id/imgv1"
+        />
+    <TextView
+        android:id="@+id/tvproprice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="price"
+        android:layout_marginTop="10dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvprotitle"
+        />
+    <TextView
+        android:id="@+id/tvprodiscount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="discount"
+        android:layout_marginTop="10dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvproprice" />
+    <TextView
+        android:id="@+id/tvprorating"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="rating"
+        android:layout_marginTop="10dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvprodiscount" />
 
+    <TextView
+        android:id="@+id/tvprostock"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="stock"
+        android:layout_marginTop="10dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvprorating" />
+    <TextView
+        android:id="@+id/tvprobrand"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="brand"
+        android:layout_marginTop="10dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvprostock" />
+    <TextView
+        android:id="@+id/tvprocategory"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Category"
+        android:layout_marginTop="10dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvprobrand"
+        />
+
+    <TextView
+        android:id="@+id/tvprodescription"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="description"
+        android:textStyle="bold"
+        android:layout_marginTop="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvprocategory" />
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/viewpagerproimages"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
