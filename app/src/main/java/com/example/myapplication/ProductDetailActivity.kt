@@ -17,7 +17,7 @@ class ProductDetailActivity : AppCompatActivity() {
 
 
         if(intent.extras != null){
-            val productDetail = intent.getSerializableExtra("Product_Data") as Product
+            val productDetail = intent.getSerializableExtra("abc") as Product
             val imageproduct = findViewById<ImageView>(R.id.imgv1)
             val title = findViewById<TextView>(R.id.tvprotitle)
             val discount = findViewById<TextView>(R.id.tvprodiscount)
@@ -38,7 +38,7 @@ class ProductDetailActivity : AppCompatActivity() {
             rating.text = productDetail.rating.toString()
             brand.text = productDetail.brand
             category.text = productDetail.category
-            val  mypagerAdapter = ImageAdapter(this,productDetail.images)
+            val  mypagerAdapter = ImgAdapter(this,productDetail.images)
             viewpagerimg.adapter = mypagerAdapter
             Picasso.get().load(productDetail.thumbnail).into(imageproduct)
         }

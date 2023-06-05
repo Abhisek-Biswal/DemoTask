@@ -95,7 +95,7 @@
             android:name=".ProductDetailActivity"
             android:exported="false" />
         <activity
-            android:name=".Retrofrit_Demo"
+            android:name=".RetrofritDemo"
             android:exported="false" />
         <activity
             android:name=".MapActivity"

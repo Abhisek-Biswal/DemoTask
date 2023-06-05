@@ -12,13 +12,16 @@
         android:layout_height="200dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="ContentDescription"
+        android:layout_marginTop="10dp"
+        app:layout_constraintBottom_toTopOf="@+id/tvprotitle"/>
 
     <TextView
         android:id="@+id/tvprotitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="title"
+        android:text="@string/title1"
         android:layout_marginTop="10dp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
@@ -29,7 +32,7 @@
         android:id="@+id/tvproprice"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="price"
+        android:text="@string/price1"
         android:layout_marginTop="10dp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
@@ -40,7 +43,7 @@
         android:id="@+id/tvprodiscount"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="discount"
+        android:text="@string/discount"
         android:layout_marginTop="10dp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
@@ -50,7 +53,7 @@
         android:id="@+id/tvprorating"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="rating"
+        android:text="@string/rating"
         android:layout_marginTop="10dp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
@@ -61,7 +64,7 @@
         android:id="@+id/tvprostock"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="stock"
+        android:text="@string/stock"
         android:layout_marginTop="10dp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
@@ -71,40 +74,45 @@
         android:id="@+id/tvprobrand"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="brand"
+        android:text="@string/brand"
         android:layout_marginTop="10dp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tvprostock" />
+        app:layout_constraintTop_toBottomOf="@id/tvprostock"
+        />
     <TextView
         android:id="@+id/tvprocategory"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Category"
+        android:text="@string/category1"
         android:layout_marginTop="10dp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tvprobrand"
-        />
+        app:layout_constraintBottom_toTopOf="@+id/tvprodescription"/>
 
     <TextView
         android:id="@+id/tvprodescription"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="description"
+        android:text="@string/description"
         android:textStyle="bold"
         android:layout_marginTop="10dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tvprocategory" />
+        app:layout_constraintTop_toBottomOf="@id/tvprocategory"
+        app:layout_constraintBottom_toTopOf="@+id/viewpagerproimages"/>
+
     <androidx.viewpager.widget.ViewPager
         android:id="@+id/viewpagerproimages"
         android:layout_width="200dp"
         android:layout_height="200dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginBottom="10dp"
+        app:layout_constraintTop_toBottomOf="@+id/tvprodescription"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

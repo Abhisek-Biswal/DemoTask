@@ -14,7 +14,7 @@
         android:layout_marginTop="40dp"
         android:layout_marginRight="40dp"
         android:background="@drawable/btn_open_selector"
-        android:text="Submit"
+        android:text="@string/submit"
         android:gravity="center"
         android:textSize="50sp"
         android:textColor="@drawable/btn_open_color_selector"

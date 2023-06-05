@@ -41,6 +41,19 @@
     <string name="fragment1">Fragment1</string>
     <string name="fragment2">Fragment2</string>
     <string name="fragment3">Fragment3</string>
+    <string name="title">Title</string>
+    <string name="category">Category</string>
+    <string name="price">Price</string>
+    <string name="details">Details</string>
+    <string name="description">description</string>
+    <string name="brand">brand</string>
+    <string name="stock">stock</string>
+    <string name="rating">rating</string>
+    <string name="discount">discount</string>
+    <string name="title1">title1</string>
+    <string name="price1">price1</string>
+    <string name="category1">Category1</string>
+    <string name="submit">Submit</string>
 </resources>
 
 

@@ -16,7 +16,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 
 
 
-class Retrofrit_Demo : AppCompatActivity() {
+class RetrofritDemo : AppCompatActivity() {
     lateinit var recyclerView: RecyclerView
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -31,8 +31,7 @@ class Retrofrit_Demo : AppCompatActivity() {
     private fun getData() {
         // on below line we are creating a retrofit
         // builder and passing our base url
-        // on below line we are creating a retrofit
-        // builder and passing our base url
+
         val retrofit = Retrofit.Builder()
             .baseUrl("https://dummyjson.com/")
 
@@ -42,7 +41,6 @@ class Retrofrit_Demo : AppCompatActivity() {
             .addConverterFactory(GsonConverterFactory.create())
             .build()
 
-        // below line is to create an instance for our retrofit api class.
         // below line is to create an instance for our retrofit api class.
         val retrofitAPI = retrofit.create(ProductApi::class.java)
 
@@ -56,20 +54,20 @@ class Retrofrit_Demo : AppCompatActivity() {
 
                 retrofit2!!.setOnClickListener(object : ProductAdapter.OnClickListener {
                     override fun onClick(position: Int, productlist: MutableList<Product>) {
-                        val intent = Intent(this@Retrofrit_Demo, ProductDetailActivity::class.java)
+                        val intent = Intent(this@RetrofritDemo, ProductDetailActivity::class.java)
                         val products = productlist[position]
                         val data = Product(products.id,products.title,products.description,products.price,
                             products.discountPercentage,products.rating,products.stock,products.brand,
                             products.category,products.thumbnail,products.images)
-                       // intent.putExtra("Product_Data",data)
-                        //intent.putExtra("Product_Data",data)
+
+                        intent.putExtra("abc",data)
                         startActivity(intent)
                     }
                 })
             }
             override fun onFailure(call: Call<ProductList?>, t: Throwable) {
                 // displaying an error message in toast
-                Toast.makeText(this@Retrofrit_Demo, "Fail to get the data..", Toast.LENGTH_SHORT)
+                Toast.makeText(this@RetrofritDemo, "Fail to get the data..", Toast.LENGTH_SHORT)
                     .show()
             }
         })

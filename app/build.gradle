@@ -37,7 +37,7 @@ android {
         exclude 'META-INF/atomicfu.kotlin_module'
     }
     buildFeatures {
-        viewBinding true
+        dataBinding true
     }
 }
 

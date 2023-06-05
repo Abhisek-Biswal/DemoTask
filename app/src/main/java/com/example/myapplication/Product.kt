@@ -16,4 +16,4 @@ data class Product(
     @SerializedName("thumbnail"          ) var thumbnail          : String?           = null,
     @SerializedName("images"             ) var images             : ArrayList<String> = arrayListOf()
 
-)
+) : java.io.Serializable

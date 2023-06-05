@@ -12,7 +12,7 @@ class ProductAdapter( val productList :  MutableList<Product>) : RecyclerView.Ad
     private lateinit var onClickListener: OnClickListener
 
 
-    var onItemClick : ((Product) -> Unit)? = null
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int):  ProductViewHolder {
         val  itemView = LayoutInflater.from(parent.context).inflate(R.layout.item_of_products,parent,false)
         return ProductViewHolder(itemView)
@@ -29,7 +29,7 @@ class ProductAdapter( val productList :  MutableList<Product>) : RecyclerView.Ad
 
     }
 
-    fun setOnClickListener(onClickListener: ProductAdapter.OnClickListener) {
+    fun setOnClickListener(onClickListener: OnClickListener) {
         this.onClickListener = onClickListener
     }
 
@@ -39,11 +39,6 @@ class ProductAdapter( val productList :  MutableList<Product>) : RecyclerView.Ad
     }
 
 
-//    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ProductViewHolder {
-//        val layoutInflater = LayoutInflater.from(parent.context)
-//        val view =    layoutInflater.inflate(R.layout.item_of_products, parent, false)
-//        return ProductViewHolder(view)
-//    }
     override fun getItemCount() :Int{
         return productList.size
     }
