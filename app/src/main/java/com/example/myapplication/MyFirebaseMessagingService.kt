@@ -35,7 +35,7 @@ class MyFirebaseMessagingService: FirebaseMessagingService() {
             showPushNotification(title, message)
 
             when (remoteMessage.data["onclick"]) {
-                "Facebook" -> {
+                "Whatsapp" -> {
                     val intent = Intent(this, WhatsappNotificationActivity::class.java)
                     intent.addCategory(Intent.CATEGORY_LAUNCHER)
                     intent.setAction(Intent.ACTION_MAIN)
@@ -46,7 +46,7 @@ class MyFirebaseMessagingService: FirebaseMessagingService() {
                         PendingIntent.FLAG_IMMUTABLE
                     )
                 }
-                "Instagram" -> {
+                "Messenger" -> {
                     val intent = Intent(this, MessengerNotificationActivity::class.java)
                     intent.addCategory(Intent.CATEGORY_LAUNCHER)
                     intent.setAction(Intent.ACTION_MAIN)
@@ -57,7 +57,7 @@ class MyFirebaseMessagingService: FirebaseMessagingService() {
                         PendingIntent.FLAG_IMMUTABLE
                     )
                 }
-                "Notification" -> {
+                "Chat" -> {
                     val intent = Intent(this, ChatNotificationActivity::class.java)
                     intent.addCategory(Intent.CATEGORY_LAUNCHER)
                     intent.setAction(Intent.ACTION_MAIN)

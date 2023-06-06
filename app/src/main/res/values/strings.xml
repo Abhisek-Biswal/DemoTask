@@ -59,6 +59,7 @@
     <string name="hide_pointer">hide pointer</string>
     <string name="hide_current">"hide current "</string>
     <string name="hide_zoom">hide zoom</string>
+    <string name="fcm_task">FCM Task</string>
 </resources>
 
 
