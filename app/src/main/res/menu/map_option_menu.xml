@@ -1,18 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <item android:title="Default"
-        android:id="@+id/default_type"/>
+    <item android:id="@+id/map_type" android:title="Maps">
+        <menu>
+        <item android:title="Default"
+            android:id="@+id/default_type"/>
 
 
-    <item android:title="Satelite"
-        android:id="@+id/satellite_type"/>
+        <item android:title="Satelite"
+            android:id="@+id/satellite_type"/>
 
-    <item android:title="Terrain"
-        android:id="@+id/terrain_type"/>
+        <item android:title="Terrain"
+            android:id="@+id/terrain_type"/>
 
-    <item android:title="Hybrid"
-        android:id="@+id/hybrid_type"/>
+        <item android:title="Hybrid"
+            android:id="@+id/hybrid_type"/>
+
+        </menu>
+    </item>
+
+    <item android:id="@+id/map_settings" android:title="@string/map_setting">
+        <menu>
+            <group android:checkableBehavior="all">
+                <item android:id="@+id/current_pointer"
+                    android:title="@string/hide_pointer" />
+                <item android:id="@+id/current_map"
+                    android:title="@string/hide_current" />
+                <item android:id="@+id/zoom_btn"
+                    android:title="@string/hide_zoom" />
+
+            </group>
+        </menu>
+    </item>
 
 
 </menu>

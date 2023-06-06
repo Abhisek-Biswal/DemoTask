@@ -11,60 +11,13 @@
         android:id="@+id/mapFragment"
         android:name="com.google.android.gms.maps.SupportMapFragment"
         android:layout_width="match_parent"
-        android:layout_height="730dp"
+        android:layout_height="match_parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <CheckBox
-        android:id="@+id/checkbox_gps"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/mapFragment"
-        app:layout_constraintBottom_toBottomOf="parent"/>
-    <TextView
-        android:id="@+id/textview_gps"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="GPS:-"
-        app:layout_constraintEnd_toStartOf="@+id/checkbox_gps"
-        app:layout_constraintTop_toBottomOf="@+id/mapFragment"
-        app:layout_constraintBottom_toBottomOf="parent"/>
 
-    <CheckBox
-        android:id="@+id/checkbox_location_pointer"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintStart_toEndOf="@+id/textview_location_pointer"
-        app:layout_constraintTop_toBottomOf="@+id/mapFragment"
-        app:layout_constraintBottom_toBottomOf="parent" />
-    <TextView
-        android:id="@+id/textview_location_pointer"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="location pointer:-"
-        app:layout_constraintEnd_toStartOf="@+id/checkbox_location_pointer"
-        app:layout_constraintStart_toEndOf="@+id/checkbox_zoom_in_out"
-        app:layout_constraintTop_toBottomOf="@+id/mapFragment"
-        app:layout_constraintBottom_toBottomOf="parent"
-        android:layout_marginStart="15dp"/>
-    <CheckBox
-        android:id="@+id/checkbox_zoom_in_out"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintStart_toEndOf="@+id/textview_zoom_in_out"
-        app:layout_constraintTop_toBottomOf="@+id/mapFragment"
-        app:layout_constraintBottom_toBottomOf="parent" />
-    <TextView
-        android:id="@+id/textview_zoom_in_out"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Zoom Screen:-"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/mapFragment"
-        app:layout_constraintBottom_toBottomOf="parent"/>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

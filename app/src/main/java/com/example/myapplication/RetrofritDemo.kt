@@ -50,7 +50,7 @@ class RetrofritDemo : AppCompatActivity() {
         call.enqueue(object : Callback<ProductList?> {
             override fun onResponse(call: Call<ProductList?>, response: Response<ProductList?>) {
                 val retrofit2= response.body()?.let {ProductAdapter(it.products)}
-                recyclerView.adapter = retrofit2
+                recyclerView.adapter = retrofit2 //we set the adapter of recycler view to product adapter
 
                 retrofit2!!.setOnClickListener(object : ProductAdapter.OnClickListener {
                     override fun onClick(position: Int, productlist: MutableList<Product>) {
