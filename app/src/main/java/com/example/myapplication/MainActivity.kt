@@ -76,5 +76,8 @@ class MainActivity : AppCompatActivity() {
         findViewById<Button>(R.id.my_drawable).setOnClickListener {
             startActivity(Intent(this,MyDrawable::class.java))
         }
+        findViewById<Button>(R.id.live_data_demo).setOnClickListener {
+            startActivity(Intent(this,LiveDataDemo::class.java))
+        }
     }
 }

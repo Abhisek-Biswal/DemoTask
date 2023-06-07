@@ -19,6 +19,9 @@
         android:theme="@style/Theme.MyApplication"
         tools:targetApi="31">
         <activity
+            android:name=".LiveDataDemo"
+            android:exported="false" />
+        <activity
             android:name=".MessengerNotificationActivity"
             android:exported="false">
             <meta-data
