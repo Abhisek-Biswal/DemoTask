@@ -18,7 +18,7 @@
             android:id="@+id/tv_title2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Edit Activity"
+            android:text="@string/edit_activity"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
@@ -30,19 +30,20 @@
             android:id="@+id/etv_home1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@{edit.name}"
+            android:hint="@string/enter_your_name"
             app:layout_constraintStart_toStartOf="@+id/tv_title2"
             app:layout_constraintEnd_toEndOf="@+id/tv_title2"
             app:layout_constraintTop_toBottomOf="@+id/tv_title2"
             android:layout_margin="40dp"
             android:padding="30dp"
+            android:inputType="text"
             />
 
         <EditText
             android:id="@+id/etv_email1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@{edit.emailId}"
+            android:hint="@string/enter_your_email"
             app:layout_constraintStart_toStartOf="@+id/etv_home1"
             app:layout_constraintEnd_toEndOf="@+id/etv_home1"
             app:layout_constraintTop_toBottomOf="@+id/etv_home1"
@@ -50,6 +51,7 @@
             android:layout_marginRight="40dp"
             android:layout_marginTop="10dp"
             android:padding="30dp"
+            android:inputType="textEmailAddress"
 
             />
 
@@ -57,7 +59,7 @@
             android:id="@+id/etv_address1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@{edit.address}"
+            android:hint="@string/enter_your_address"
             app:layout_constraintStart_toStartOf="@+id/etv_email1"
             app:layout_constraintEnd_toEndOf="@+id/etv_email1"
             app:layout_constraintTop_toBottomOf="@+id/etv_email1"
@@ -65,13 +67,14 @@
             android:layout_marginRight="40dp"
             android:layout_marginTop="10dp"
             android:padding="30dp"
+            android:inputType="textPostalAddress"
             />
 
         <EditText
             android:id="@+id/etv_phone1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@{edit.phone}"
+            android:hint="@string/enter_your_phone"
             app:layout_constraintStart_toStartOf="@+id/etv_address1"
             app:layout_constraintEnd_toEndOf="@+id/etv_address1"
             app:layout_constraintTop_toBottomOf="@+id/etv_address1"
@@ -79,13 +82,14 @@
             android:layout_marginRight="40dp"
             android:layout_marginTop="10dp"
             android:padding="30dp"
+            android:inputType="phone"
             />
 
         <EditText
             android:id="@+id/etv_hobby1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@{edit.hobby}"
+            android:hint="@string/enter_your_hobby"
             app:layout_constraintStart_toStartOf="@+id/etv_phone1"
             app:layout_constraintEnd_toEndOf="@+id/etv_phone1"
             app:layout_constraintTop_toBottomOf="@+id/etv_phone1"
@@ -93,6 +97,7 @@
             android:layout_marginRight="40dp"
             android:layout_marginTop="10dp"
             android:padding="30dp"
+            android:inputType="text"
             />
 
 
@@ -101,7 +106,7 @@
             android:id="@+id/save_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Save Button"
+            android:text="@string/save_button"
             app:layout_constraintStart_toStartOf="@+id/etv_hobby1"
             app:layout_constraintEnd_toEndOf="@+id/etv_hobby1"
             app:layout_constraintTop_toBottomOf="@+id/etv_hobby1"

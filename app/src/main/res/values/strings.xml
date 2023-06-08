@@ -60,6 +60,20 @@
     <string name="hide_current">"hide current "</string>
     <string name="hide_zoom">hide zoom</string>
     <string name="fcm_task">FCM Task</string>
+    <string name="home_activity">Home Activity</string>
+    <string name="name">Name</string>
+    <string name="email_address">Email Address</string>
+    <string name="address">Address</string>
+    <string name="phone">Phone</string>
+    <string name="hobby">Hobby</string>
+    <string name="edit_button">Edit Button</string>
+    <string name="edit_activity">Edit Activity</string>
+    <string name="enter_your_name">Enter your Name</string>
+    <string name="enter_your_email">Enter your Email</string>
+    <string name="enter_your_address">Enter your Address</string>
+    <string name="enter_your_phone">Enter your Phone</string>
+    <string name="enter_your_hobby">Enter your Hobby</string>
+    <string name="save_button">Save Button</string>
 </resources>
 
 

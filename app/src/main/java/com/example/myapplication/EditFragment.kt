@@ -1,15 +1,13 @@
 package com.example.myapplication
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
-import androidx.lifecycle.Observer
+import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.example.myapplication.databinding.FragmentEditBinding
-import com.example.myapplication.databinding.ItemOfProductsBinding
 
 
 class EditFragment : Fragment() {
@@ -35,9 +33,9 @@ class EditFragment : Fragment() {
 
             val name: String =binding.etvHome1.text.toString()
             val emaiId: String=binding.etvAddress1.text.toString()
-            val address:String= binding.etvAddress1.toString()
+            val address:String= binding.etvAddress1.text.toString()
             val phone: String= binding.etvPhone1.text.toString()
-            val hobby: String= binding.etvHobby1.toString()
+            val hobby: String= binding.etvHobby1.text.toString()
 
             view_Model.sendMessage(name,emaiId,address,phone,hobby)
 
