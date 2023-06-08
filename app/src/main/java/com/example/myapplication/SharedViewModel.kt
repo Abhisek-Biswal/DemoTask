@@ -1,5 +1,6 @@
 package com.example.myapplication
 
+import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
@@ -20,6 +21,7 @@ class SharedViewModel(private val repository: NewsRepository= NewsRepository()) 
     fun data(topicName : String) {
         viewModelScope.launch {
             _topicData.value = repository.fetchData(topicName)
+            Log.e("News",_topicData.value.toString())
         }
     }
 

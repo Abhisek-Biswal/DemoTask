@@ -5,7 +5,8 @@ import retrofit2.converter.gson.GsonConverterFactory
 
 class ApiBuild {
     companion object{
-        val baseURL = "https://newsapi.org/v2/"
+//        val baseURL = "https://newsapi.org/v2/"
+        val baseURL =  "https://saurav.tech/NewsAPI/"
 
         var newsServices : NewsApi? = null
         fun createConnection(): NewsApi? {
@@ -18,3 +19,4 @@ class ApiBuild {
         }
     }
 }
+//curl --request GET 'https://saurav.tech/NewsAPI/top-headlines/category/health/in.json'

@@ -1,6 +1,7 @@
 package com.example.myapplication
 
 import android.os.Bundle
+import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import androidx.viewpager.widget.ViewPager
 import com.google.android.material.tabs.TabLayout
@@ -15,6 +16,12 @@ class ViewPagerAndTabLayout : AppCompatActivity() {
 
         val tabLayout=findViewById<TabLayout>(R.id.tablayout)
         tabLayout.setupWithViewPager(viewPager)
+
+//        var count=0
+//
+//        tabLayout.addOnTabSelectedListener()
+
+
 
     }
 }
