@@ -98,7 +98,7 @@ dependencies {
 //    implementation 'org.koin:koin-androidx-scope:3.2.0'
     implementation "io.insert-koin:Koin-android:3.4.2"
     implementation "io.insert-koin:Koin-core:3.4.2"
-    implementation "io.insert-koin:Koin-viewmodel:3.4.2"
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:2.6.1"
 
 
 

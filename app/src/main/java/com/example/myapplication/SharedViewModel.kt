@@ -1,10 +1,10 @@
 package com.example.myapplication
 
-import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import kotlinx.coroutines.launch
+
 
 class SharedViewModel(private val repository: NewsRepository= NewsRepository()) : ViewModel(){
 
@@ -15,15 +15,17 @@ class SharedViewModel(private val repository: NewsRepository= NewsRepository()) 
         message.value = Home(name,emailId,address,phone,hobby)
     }
 
-    val _topicData = MutableLiveData<List<Articles>>()
+    private val _topicData = MutableLiveData<List<Articles>?>()
     val topicList = _topicData
 
     fun data(topicName : String) {
         viewModelScope.launch {
-            _topicData.value = repository.fetchData(topicName)
-            Log.e("News",_topicData.value.toString())
+            _topicData.value=repository.fetchData(topicName)
+            //Log.e("News",_topicData.value.toString())
         }
     }
 
 
 }
+
+

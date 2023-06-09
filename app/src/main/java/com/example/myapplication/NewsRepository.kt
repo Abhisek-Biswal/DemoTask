@@ -4,7 +4,7 @@ import androidx.lifecycle.MutableLiveData
 
 class NewsRepository() {
 
-    val topicData = MutableLiveData<List<Articles>>()
+    val topicName = MutableLiveData<List<Articles>>()
     val loadError = MutableLiveData<String>()
     var loading = MutableLiveData<Boolean>()
 

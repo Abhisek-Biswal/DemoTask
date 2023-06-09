@@ -1,18 +1,19 @@
 package com.example.myapplication
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
+import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
-import com.example.myapplication.databinding.FragmentEditBinding
 import com.example.myapplication.databinding.FragmentHomeBinding
 
 
 class HomeFragment : Fragment() {
+
+    lateinit var newsAdapter : NewsAdapter
 
     val vModel by lazy {
         ViewModelProvider(requireActivity())[SharedViewModel::class.java]
@@ -43,9 +44,13 @@ class HomeFragment : Fragment() {
             binding.tvAddress.setText(it.address)
             binding.tvPhone.setText(it.phone)
             binding.tvHobby.setText(it.hobby)
+
+            vModel.data("car")
         })
         return binding.root
+
     }
+
 
 
 

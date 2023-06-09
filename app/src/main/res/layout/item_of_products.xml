@@ -7,6 +7,9 @@
        <variable
            name="productItem"
            type="com.example.myapplication.Product" />
+        <variable
+            name="imageUrl"
+            type="String" />
     </data>
     <androidx.constraintlayout.widget.ConstraintLayout
 
@@ -23,8 +26,9 @@
             android:scaleType="fitCenter"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            tools:srcCompat="@tools:sample/avatars"
-            tools:ignore="MissingConstraints" />
+            tools:ignore="MissingConstraints"/>
+<!--            app:imageUrl="@{imageUrl}"-->
+
 
 
 
@@ -70,6 +74,7 @@
         <com.google.android.material.chip.Chip
 
             android:id="@+id/chip_view"
+            style="@style/Widget.MaterialComponents.Chip.Choice"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="200dp"
