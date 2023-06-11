@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/purple_700"
+    tools:context=".RecyclerView">
+
+    <TextView
+        android:id="@+id/tv_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/my_rv"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:text="@string/contacts"
+        android:padding="15dp"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        />
+
+    <ImageButton
+        android:id="@+id/del_btn"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:src="@drawable/ic_delete"
+        app:layout_constraintEnd_toEndOf="@id/tv_title"
+        app:layout_constraintTop_toTopOf="@id/tv_title"
+        app:layout_constraintBottom_toBottomOf="@id/tv_title"
+        android:layout_marginEnd="20dp"
+        android:padding="20dp"
+        />
+
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/my_rv"
+        app:layout_constraintTop_toBottomOf="@id/tv_title"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        tools:listitem="@layout/rv_row"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
