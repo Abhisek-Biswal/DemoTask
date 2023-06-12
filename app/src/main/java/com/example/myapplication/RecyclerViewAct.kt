@@ -49,11 +49,17 @@ class RecyclerViewAct : AppCompatActivity() {
         deleteBtn.setOnClickListener{
             val newItemList = itemObject.filter { it.isSelected }
 
+            var itemIndex: Int
+
             for(i in newItemList){
 
-                itemObject.remove(i)
-                recyclerViewAdapter.notifyItemRangeChanged(itemObject.indexOf(i),itemObject.size)
-                recyclerViewAdapter.notifyItemRemoved(itemObject.indexOf(i))
+
+
+                itemIndex=itemObject.indexOf(i)
+                itemObject.removeAt(itemIndex)
+                recyclerViewAdapter.notifyItemRemoved(itemIndex)
+                recyclerViewAdapter.notifyItemRangeChanged(itemIndex,itemObject.size)
+
             }
         }
     }
