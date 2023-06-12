@@ -6,14 +6,21 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentManager.findFragment
+import androidx.fragment.app.findFragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.example.myapplication.databinding.FragmentHomeBinding
 
 
 class HomeFragment : Fragment() {
 
+    lateinit var recyclerView: RecyclerView
     lateinit var newsAdapter : NewsAdapter
+    lateinit var binding: FragmentHomeBinding
+    lateinit var manager: RecyclerView.LayoutManager
 
     val vModel by lazy {
         ViewModelProvider(requireActivity())[SharedViewModel::class.java]
@@ -45,9 +52,15 @@ class HomeFragment : Fragment() {
             binding.tvPhone.setText(it.phone)
             binding.tvHobby.setText(it.hobby)
 
-            vModel.data("car")
+            vModel.data(binding.tvHobby.text.toString())
         })
         return binding.root
+
+    }
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+
 
     }
 

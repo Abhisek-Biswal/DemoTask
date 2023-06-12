@@ -1,12 +1,14 @@
 package com.example.myapplication
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import android.widget.ImageButton
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 
-class RecyclerView : AppCompatActivity() {
+class RecyclerViewAct : AppCompatActivity() {
+    @SuppressLint("NotifyDataSetChanged")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_recycler_view)
@@ -14,7 +16,7 @@ class RecyclerView : AppCompatActivity() {
 
         val recyclerView= findViewById<RecyclerView>(R.id.my_rv)
 
-        val itemObject = mutableListOf<Item>()
+        val itemObject = arrayListOf<Item>()
 
         itemObject.add(Item("Abhisek","abhisek@gmail.com",123,R.drawable.ic_image))
         itemObject.add(Item("Abhi","abhi@gmail.com",123,R.drawable.ic_image))
@@ -41,7 +43,8 @@ class RecyclerView : AppCompatActivity() {
 
         val deleteBtn: ImageButton = findViewById(R.id.del_btn)
         val recyclerViewAdapter = RecyclerViewAdapter(itemObject)
-        recyclerView.adapter= RecyclerViewAdapter(itemObject)
+        recyclerView.adapter= recyclerViewAdapter
+
 
         deleteBtn.setOnClickListener{
             val newItemList = itemObject.filter { it.isSelected }

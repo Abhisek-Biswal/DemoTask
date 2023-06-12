@@ -79,5 +79,11 @@ class MainActivity : AppCompatActivity() {
         findViewById<Button>(R.id.live_data_demo).setOnClickListener {
             startActivity(Intent(this,LiveDataDemo::class.java))
         }
+        findViewById<Button>(R.id.recyler_view_demo).setOnClickListener {
+            startActivity(Intent(this,RecyclerViewAct::class.java))
+        }
+        findViewById<Button>(R.id.btn_intent).setOnClickListener {
+            startActivity(Intent(this,IntentAct::class.java))
+        }
     }
 }

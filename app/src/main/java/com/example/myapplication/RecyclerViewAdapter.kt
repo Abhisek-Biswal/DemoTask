@@ -9,7 +9,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
-class RecyclerViewAdapter(val items: MutableList<Item>): RecyclerView.Adapter<RecyclerViewAdapter.ViewHolder>() {
+class RecyclerViewAdapter(val items: ArrayList<Item>): RecyclerView.Adapter<RecyclerViewAdapter.ViewHolder>() {
 
     inner class ViewHolder(itemView: View): RecyclerView.ViewHolder(itemView) {
 
@@ -19,6 +19,7 @@ class RecyclerViewAdapter(val items: MutableList<Item>): RecyclerView.Adapter<Re
         var itemEmail: TextView
         var itemCheckBox: CheckBox
         var itemImageBtn : ImageButton
+
 
 
         init {
@@ -45,11 +46,12 @@ class RecyclerViewAdapter(val items: MutableList<Item>): RecyclerView.Adapter<Re
     }
 
     override fun onBindViewHolder(holder: RecyclerViewAdapter.ViewHolder, position: Int) {
-        holder.itemImage.setImageResource(items[position].image)
-        holder.itemName.text = items[position].name
-        holder.itemPhone.text = items[position].phone.toString()
-        holder.itemEmail.text = items[position].emailId
-        holder.itemCheckBox.isChecked = items[position].isSelected
+        val pos1 = items[position]
+        holder.itemImage.setImageResource(pos1.image)
+        holder.itemName.text = (pos1.name)
+        holder.itemPhone.text = (pos1.phone.toString())
+        holder.itemEmail.text = (pos1.emailId)
+        holder.itemCheckBox.isChecked = (pos1.isSelected)
         holder.itemCheckBox.setOnClickListener {
             items[position].isSelected = !items[position].isSelected
             notifyItemChanged(position)

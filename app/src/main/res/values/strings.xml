@@ -75,6 +75,11 @@
     <string name="enter_your_hobby">Enter your Hobby</string>
     <string name="save_button">Save Button</string>
     <string name="contacts">Contacts</string>
+    <string name="go_back">Go Back</string>
+    <string name="enter_data">Enter Data</string>
+    <string name="go_to_second_screen">Go to Second Screen</string>
+    <string name="enter_your_link">Enter Your Link</string>
+    <string name="click">Click</string>
 </resources>
 
 
