@@ -12,7 +12,6 @@ class IntentAct : AppCompatActivity() {
 
     lateinit var editText: EditText
     lateinit var clickBtn: Button
-    //val image = findViewById<ImageView>(R.id.iv)
     lateinit var image : ImageView
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -21,17 +20,25 @@ class IntentAct : AppCompatActivity() {
 
         editText = findViewById(R.id.ed_link)
         clickBtn = findViewById(R.id.btn_link)
-        image = findViewById<ImageView>(R.id.iv)
+        image = findViewById(R.id.iv)
 
         if (intent.hasExtra("android.intent.extra.STREAM")) {
-            val bundle = intent?.extras?.get("android.intent.extra.STREAM")
+            val bundle = intent?.extras?.getString("android.intent.extra.STREAM")
             val uri = Uri.parse(bundle.toString())
             image.setImageURI(uri)
         }
 
         clickBtn.setOnClickListener {
 
-            val uri = Uri.parse("https://www.google.com")
+
+            var page= editText.text.toString()
+
+            if(!page.startsWith("http://www.") && !page.startsWith("https://www.") && !page.endsWith(".com")){
+                page = "https://www.$page.com"
+            }
+
+            val uri = Uri.parse(page)
+
             val browsers = arrayOf(
                 Intent(Intent.ACTION_VIEW, uri).setPackage("com.android.chrome"),
                 Intent(Intent.ACTION_VIEW, uri).setPackage("org.mozilla.firefox"),
