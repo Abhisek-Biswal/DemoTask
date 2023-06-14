@@ -88,5 +88,8 @@ class MainActivity : AppCompatActivity() {
         findViewById<Button>(R.id.run_time_permission).setOnClickListener {
             startActivity(Intent(this,FirstScreenActivity::class.java))
         }
+        findViewById<Button>(R.id.notific_btn).setOnClickListener {
+            startActivity(Intent(this,NotificationAct::class.java))
+        }
     }
 }

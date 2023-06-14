@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".NotificationAct">
+
+    <Button
+        android:id="@+id/expandable_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Expandable Notification Button"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:textSize="20sp"
+        android:textColor="@color/red"
+        android:backgroundTint="@color/black"
+        android:layout_margin="30dp"
+        />
+
+    <Button
+        android:id="@+id/fullscreen_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Full Screen Notification Button"
+        app:layout_constraintStart_toStartOf="expandable_btn"
+        app:layout_constraintEnd_toEndOf="expandable_btn"
+        app:layout_constraintTop_toBottomOf="expandable_btn"
+        android:textSize="20sp"
+        android:textColor="@color/red"
+        android:backgroundTint="@color/black"
+        android:layout_margin="30dp"
+        />
+</androidx.constraintlayout.widget.ConstraintLayout>
