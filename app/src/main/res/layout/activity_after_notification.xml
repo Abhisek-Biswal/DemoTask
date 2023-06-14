@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AfterNotificationAct">
+
+    <TextView
+        android:id="@+id/tv_contact"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/contact_list"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:textSize="20sp"
+        android:layout_margin="20dp"
+        android:textColor="@color/white"
+        />
+
+
+<!--    <ListView-->
+<!--        android:id="@+id/rv_of_contactlist"-->
+<!--        android:layout_width="0dp"-->
+<!--        android:layout_height="0dp"-->
+<!--        app:layout_constraintStart_toStartOf="@+id/tv_contact"-->
+<!--        app:layout_constraintEnd_toEndOf="@+id/tv_contact"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/tv_contact"-->
+<!--        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--        android:layout_margin="20dp"-->
+<!--        android:layout_marginTop="10dp"-->
+<!--        tools:listitem="@layout/rv_notification_contactlist"/>-->
+
+
+
+
+</RelativeLayout>

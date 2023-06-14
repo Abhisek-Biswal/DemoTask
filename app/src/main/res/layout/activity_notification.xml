@@ -14,6 +14,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/fullscreen_btn"
         android:textSize="20sp"
         android:textColor="@color/red"
         android:backgroundTint="@color/black"
@@ -25,12 +26,39 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Full Screen Notification Button"
-        app:layout_constraintStart_toStartOf="expandable_btn"
-        app:layout_constraintEnd_toEndOf="expandable_btn"
-        app:layout_constraintTop_toBottomOf="expandable_btn"
+        app:layout_constraintStart_toStartOf="@id/expandable_btn"
+        app:layout_constraintEnd_toEndOf="@+id/expandable_btn"
+        app:layout_constraintTop_toBottomOf="@id/expandable_btn"
         android:textSize="20sp"
         android:textColor="@color/red"
         android:backgroundTint="@color/black"
         android:layout_margin="30dp"
         />
+
+    <Button
+        android:id="@+id/custom_notification_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Custom Notification Button"
+        app:layout_constraintStart_toStartOf="@+id/fullscreen_btn"
+        app:layout_constraintEnd_toEndOf="@+id/fullscreen_btn"
+        app:layout_constraintTop_toBottomOf="@+id/fullscreen_btn"
+        android:textSize="20sp"
+        android:textColor="@color/red"
+        android:backgroundTint="@color/black"
+        android:layout_margin="30dp"/>
+
+    <Button
+        android:id="@+id/channel_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Channel"
+        app:layout_constraintStart_toStartOf="@+id/custom_notification_btn"
+        app:layout_constraintEnd_toEndOf="@id/custom_notification_btn"
+        app:layout_constraintTop_toBottomOf="@id/custom_notification_btn"
+        android:textSize="20sp"
+        android:textColor="@color/red"
+        android:backgroundTint="@color/black"
+        android:layout_margin="30dp"/>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

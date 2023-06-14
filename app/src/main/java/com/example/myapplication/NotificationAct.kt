@@ -4,10 +4,12 @@ import android.annotation.SuppressLint
 import android.app.*
 import android.content.Context
 import android.content.Intent
+import android.graphics.BitmapFactory
 import android.graphics.Color
 import android.os.Build
 import android.os.Bundle
 import android.widget.Button
+import android.widget.RemoteViews
 import androidx.appcompat.app.AppCompatActivity
 
 class NotificationAct : AppCompatActivity() {
@@ -21,8 +23,13 @@ class NotificationAct : AppCompatActivity() {
     private val description = "Some Description"
     private val channelID = "Some Channel ID"
 
+    private val channel_id = "Some Id"
+    private val  description1 = "Some Description1"
 
-    @SuppressLint("MissingInflatedId")
+    private val channel_id2 = "Some Id2"
+    private val description2 = "Some Description2"
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_notification)
@@ -30,33 +37,31 @@ class NotificationAct : AppCompatActivity() {
         // Declaring the button which onclick generates a notification
         val btn = findViewById<Button>(R.id.expandable_btn)
 
+        val btn2 = findViewById<Button>(R.id.fullscreen_btn)
+
+        val btn3 = findViewById<Button>(R.id.custom_notification_btn)
+
         // Notification Service for the Manager
         notifManager = getSystemService(Context.NOTIFICATION_SERVICE)
                 as NotificationManager
 
-        // Notifications are in the form of Intents
-        val someintent = Intent(this, LauncherActivity::class.java)
-        val pendingIntent = PendingIntent.getActivity(this,0,someintent,
-            PendingIntent.FLAG_UPDATE_CURRENT)
 
         // Idea is to click the button and the notification appears
         btn.setOnClickListener {
 
             // Declaring a message (string) to be displayed
             // in the notification
-            val message = "Some random text for testing purpose" +
-                    "Some day you will be" +
-                    "reading this" +
-                    "and by the time, it'll be too late" +
-                    "to confess everything."
+            val message = "Good Morning" +
+                    " Expandable" +
+                    " Notification" +
+                    " Completed." +
+                    " Have a nice day."
 
             // If Min. API level of the phone is 26, then notification could be
             // made asthetic
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
                 notifChannel = NotificationChannel(channelID,description,
                     NotificationManager.IMPORTANCE_HIGH)
-                notifChannel.enableLights(true)
-                notifChannel.lightColor = Color.RED
                 notifChannel.enableVibration(true)
 
                 notifManager.createNotificationChannel(notifChannel)
@@ -71,14 +76,14 @@ class NotificationAct : AppCompatActivity() {
                         .bigText(message))// <---- Look here
 
 
-                    .setContentIntent(pendingIntent)
+
             }
             // Else the Android device would give out default UI attributes
             else{
                 notifBuilder = Notification.Builder(this)
                     .setContentTitle("Title")
                     .setContentText("Text")
-                    .setContentIntent(pendingIntent)
+
             }
 
             // Everything is done now and the Manager is to be notified about
@@ -86,6 +91,58 @@ class NotificationAct : AppCompatActivity() {
             notifManager.notify(1234,notifBuilder.build())
         }
 
+        btn2.setOnClickListener {
 
+
+
+//            val textMessage = "Click On the Message"
+
+            // pendingIntent is an intent for future use i.e after
+            // the notification is clicked, this intent will come into action
+
+            val intent = Intent(this, AfterNotificationAct::class.java)
+
+            val pendingIntent = PendingIntent.getActivity(this, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT)
+
+            // RemoteViews are used to use the content of
+            // some different layout apart from the current activity layout
+            val contentView = RemoteViews(packageName, R.layout.activity_after_notification)
+
+            // checking if android version is greater than oreo(API 26) or not
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+                notifChannel = NotificationChannel(channel_id, description1, NotificationManager.IMPORTANCE_HIGH)
+                notifChannel.enableVibration(false)
+                notifManager.createNotificationChannel(notifChannel)
+
+                notifBuilder = Notification.Builder(this, channel_id)
+//                    .setContent(contentView)
+//                    .setSmallIcon(R.drawable.ic_launcher_background)
+//                    .setContentTitle("Title")
+//                    .setContentText("Click on the Message")
+                    .setContentTitle("Title")
+                    .setContentText("Click on this Message")
+                    .setSmallIcon(R.mipmap.ic_launcher_round)
+                    .setLargeIcon(BitmapFactory.decodeResource(this.resources, R.drawable.ic_launcher_background))
+                    .setContentIntent(pendingIntent)
+
+
+
+
+
+
+            } else {
+
+                notifBuilder = Notification.Builder(this)
+                    .setContentTitle("Title")
+                    .setContentText("Click on this Message")
+                    .setSmallIcon(R.mipmap.ic_launcher_round)
+                    .setLargeIcon(BitmapFactory.decodeResource(this.resources, R.drawable.ic_launcher_background))
+                    .setContentIntent(pendingIntent)
+            }
+            notifManager.notify(1234, notifBuilder.build())
+        }
+        btn3.setOnClickListener {
+
+        }
     }
 }
