@@ -20,6 +20,12 @@
         android:theme="@style/Theme.MyApplication"
         tools:targetApi="31">
         <activity
+            android:name=".MaterialDailogAct"
+            android:exported="false" />
+        <activity
+            android:name=".CustomNotificationActivity"
+            android:exported="false" />
+        <activity
             android:name=".AfterNotificationAct"
             android:exported="false" />
         <activity

@@ -91,5 +91,8 @@ class MainActivity : AppCompatActivity() {
         findViewById<Button>(R.id.notific_btn).setOnClickListener {
             startActivity(Intent(this,NotificationAct::class.java))
         }
+        findViewById<Button>(R.id.material_dailog_btn).setOnClickListener {
+            startActivity(Intent(this,MaterialDailogAct::class.java))
+        }
     }
 }

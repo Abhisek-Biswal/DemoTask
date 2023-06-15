@@ -1,9 +1,7 @@
 package com.example.myapplication
 
-import android.app.Notification
-import android.app.NotificationChannel
-import android.app.NotificationManager
-import android.app.PendingIntent
+import android.annotation.SuppressLint
+import android.app.*
 import android.content.Context
 import android.content.Intent
 import android.graphics.BitmapFactory
@@ -31,6 +29,7 @@ class NotificationAct : AppCompatActivity() {
     private val description2 = "Some Description2"
 
 
+    @SuppressLint("RemoteViewLayout")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_notification)
@@ -110,7 +109,7 @@ class NotificationAct : AppCompatActivity() {
 
             // RemoteViews are used to use the content of
             // some different layout apart from the current activity layout
-            val contentView = RemoteViews(packageName, R.layout.activity_after_notification)
+//            val contentView = RemoteViews(packageName, R.layout.activity_after_notification)
 
             // checking if android version is greater than oreo(API 26) or not
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
@@ -154,28 +153,55 @@ class NotificationAct : AppCompatActivity() {
         btn3.setOnClickListener {
 
 
+            val intent = Intent(this, LauncherActivity::class.java)
+            val pendingIntent = PendingIntent.getActivity(
+                this, 0, intent,
+                PendingIntent.FLAG_UPDATE_CURRENT
+            )
 
-                val notificationLayout = RemoteViews(packageName,
-                    R.layout.custom_notification_act
+
+            val myBitmap = BitmapFactory.decodeResource(resources,
+                R.drawable.ic_image)
+
+
+
+
+            val notificationLayout = RemoteViews(packageName,
+                    R.layout.activity_custom_notification
                 )
-                notifBuilder = Notification.Builder(this, "channel_id2")
-                    .setContentTitle("Result")
-                    .setSmallIcon(R.drawable.ic_image)
-                    .setStyle(Notification.DecoratedCustomViewStyle())
-                    .setCustomBigContentView(notificationLayout)
-                    .setPriority(Notification.PRIORITY_DEFAULT)
-                notifManager.notify(1234, notifBuilder.build())
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
 
-                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-//                    val name = "Notification Channel3"
-//                    val descriptionText = "Notification Description"
-//                    val importance = NotificationManager.IMPORTANCE_DEFAULT
-                      notifChannel = NotificationChannel(channel_id2, description2, NotificationManager.IMPORTANCE_DEFAULT).apply {
-                    }
-                    notifManager.createNotificationChannel(notifChannel)
-                }
+                notifChannel = NotificationChannel(
+                    channel_id2,
+                    description2,
+                    NotificationManager.IMPORTANCE_DEFAULT
+                )
+
+                notifManager.createNotificationChannel(notifChannel)
+
+                notifBuilder = Notification.Builder(this, channel_id2)
+                    .setContent(notificationLayout)
+                    .setSmallIcon(R.mipmap.ic_launcher_round)
 
 
+                    // Command to Insert Image in the Notification
+                    .setStyle(
+                        Notification.BigPictureStyle()
+                            .bigPicture(myBitmap)
+                    )
+                    .setContentIntent(pendingIntent)
+
+
+            } else {
+                notifBuilder = Notification.Builder(this)
+                    .setContent(notificationLayout)
+                    .setSmallIcon(R.mipmap.ic_launcher_round)
+                    .setContentIntent(pendingIntent)
+            }
+
+
+
+            notifManager.notify(1234, notifBuilder.build())
 
         }
 

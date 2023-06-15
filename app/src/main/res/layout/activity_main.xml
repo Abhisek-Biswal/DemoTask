@@ -263,6 +263,17 @@
             app:layout_constraintStart_toStartOf="@+id/run_time_permission"
             app:layout_constraintTop_toBottomOf="@+id/run_time_permission" />
 
+        <Button
+            android:id="@+id/material_dailog_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:background="@color/purple_700"
+            android:padding="5dp"
+            android:text="Material Dailog Task"
+            app:layout_constraintEnd_toEndOf="@+id/notific_btn"
+            app:layout_constraintStart_toStartOf="@+id/notific_btn"
+            app:layout_constraintTop_toBottomOf="@+id/notific_btn" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
