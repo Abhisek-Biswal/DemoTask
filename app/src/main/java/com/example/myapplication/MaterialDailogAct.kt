@@ -1,13 +1,18 @@
 package com.example.myapplication
 
 import android.annotation.SuppressLint
+import android.app.Activity
 import android.app.DatePickerDialog
 import android.app.Dialog
 import android.app.TimePickerDialog
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
+import android.widget.Toast
+import androidx.activity.result.ActivityResultLauncher
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import java.util.*
@@ -35,6 +40,8 @@ class MaterialDailogAct : AppCompatActivity() {
             val submitbtn = dialog.findViewById<Button>(R.id.submitbtn)
             val cancelbtn = dialog.findViewById<Button>(R.id.cancelbtn)
             dialog.show()
+
+
 
             fromDatetxt.setOnClickListener {
                 val currentDate = Calendar.getInstance()
@@ -111,7 +118,18 @@ class MaterialDailogAct : AppCompatActivity() {
         val toDateText = toDatetxt.text.toString()
         val timeText = timetxt.text.toString()
         if (fromDateText.isEmpty() && toDateText.isEmpty() && timeText.isEmpty()) {
-            fromDatetxt.error = "Please Enter the fields"
+            Toast.makeText( applicationContext,"Please Enter all the fields", Toast.LENGTH_SHORT).show()
+
+
+//            if(fromDateText.isEmpty()){
+//                Toast.makeText( applicationContext,"Please Enter From Date Text Field" ,Toast.LENGTH_SHORT).show()
+//            }
+//            if(toDateText.isEmpty()){
+//                Toast.makeText( applicationContext,"Please Enter To Date Text Field" ,Toast.LENGTH_SHORT).show()
+//            }
+//            if(timeText.isEmpty()){
+//                Toast.makeText( applicationContext,"Please Enter To Time Text Field" ,Toast.LENGTH_SHORT).show()
+//            }
             return false
         }
         return true
@@ -120,14 +138,13 @@ class MaterialDailogAct : AppCompatActivity() {
     private fun showConfirmationDialog(dialog1: Dialog) {
 
         val builder = AlertDialog.Builder(this)
-//        val dialogView = layoutInflater.inflate(R.layout.activity_dialog_box, null)
-//        builder.setView(dialogView)
+
         builder.setTitle("Confirmation")
         builder.setMessage("Are you sure to submit the details?")
         val data = "Selected From Date: ${fromDatetxt.text}\n"+
                 "Selected To   Date: ${toDatetxt.text}\n"+
                 "Selected Time: " + "${timetxt.text}"
-        val showdata: TextView = findViewById(R.id.tvshowdata)
+        val showdata: TextView = findViewById(R.id.tv_dialog)
         builder.setPositiveButton("OK") { dialog,_ ->
             showdata.text = data
             dialog.dismiss()

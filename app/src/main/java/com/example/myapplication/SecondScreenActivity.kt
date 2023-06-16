@@ -1,5 +1,6 @@
 package com.example.myapplication
 
+import android.app.Activity
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -19,7 +20,7 @@ class SecondScreenActivity : AppCompatActivity() {
         second_screen_btn?.setOnClickListener(View.OnClickListener {
             val intent = Intent()
             intent.putExtra("result", ed_data?.text.toString())
-            setResult(619, intent)
+            setResult(Activity.RESULT_OK, intent)
             super@SecondScreenActivity.onBackPressed()
         })
 

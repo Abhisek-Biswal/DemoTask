@@ -7,47 +7,8 @@
     tools:context=".MaterialDailogAct">
 
 
-<!--    <com.google.android.material.textview.MaterialTextView-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:id="@+id/tv_material_dailog_box"-->
-<!--        android:text="Material Dailog Box"-->
-<!--        android:textSize="20sp"-->
-<!--        android:padding="10dp"-->
-<!--        app:layout_constraintStart_toStartOf="parent"-->
-<!--        app:layout_constraintEnd_toEndOf="parent"-->
-<!--        app:layout_constraintTop_toTopOf="parent"-->
-<!--        android:gravity="center"-->
-<!--        android:layout_margin="30dp"-->
-<!--        android:textStyle="bold"/>-->
-
-<!--    <com.google.android.material.button.MaterialButton-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:id="@+id/btn_click"-->
-<!--        android:textSize="15sp"-->
-<!--        android:padding="10dp"-->
-<!--        app:layout_constraintStart_toStartOf="@+id/tv_material_dailog_box"-->
-<!--        app:layout_constraintEnd_toEndOf="@+id/tv_material_dailog_box"-->
-<!--        app:layout_constraintTop_toBottomOf="@+id/tv_material_dailog_box"-->
-<!--        android:layout_marginTop="20dp"-->
-<!--        android:text="Click"/>-->
-
-<!--    <com.google.android.material.textview.MaterialTextView-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:id="@+id/tv_show_data"-->
-<!--        android:textSize="20sp"-->
-<!--        android:padding="10dp"-->
-<!--        app:layout_constraintStart_toStartOf="@+id/btn_click"-->
-<!--        app:layout_constraintEnd_toEndOf="@id/btn_click"-->
-<!--        app:layout_constraintTop_toBottomOf="@id/btn_click"-->
-<!--        android:layout_margin="30dp"-->
-<!--        android:text="Show Data"-->
-<!--        android:gravity="center"/>-->
-
     <TextView
-        android:id="@+id/tvdialog"
+        android:id="@+id/tv_dialog"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Dialog Box"
@@ -63,7 +24,7 @@
         android:layout_height="wrap_content"
         android:text="Click"
         android:layout_marginTop="10dp"
-        app:layout_constraintTop_toBottomOf="@id/tvdialog"
+        app:layout_constraintTop_toBottomOf="@id/tv_dialog"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
     <TextView

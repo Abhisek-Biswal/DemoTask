@@ -46,6 +46,7 @@ class NotificationAct : AppCompatActivity() {
                 as NotificationManager
 
 
+
         // Idea is to click the button and the notification appears
         btn.setOnClickListener {
 
