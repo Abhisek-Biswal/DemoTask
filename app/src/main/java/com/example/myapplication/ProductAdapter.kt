@@ -6,7 +6,6 @@ import android.widget.ImageView
 import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.example.myapplication.databinding.ItemOfProductsBinding
-import com.squareup.picasso.Picasso
 
 class ProductAdapter( val productList :  MutableList<Product>) : RecyclerView.Adapter<ProductAdapter.ProductViewHolder>() {
     private lateinit var onClickListener: OnClickListener
@@ -95,4 +94,19 @@ class ProductAdapter( val productList :  MutableList<Product>) : RecyclerView.Ad
 //         val productTitle = itemView.findViewById<TextView>(R.id.textView)
 //         val productPrice = itemView.findViewById<TextView>(R.id.textView3)
 //         val productCategory = itemView.findViewById<TextView>(R.id.textView2)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

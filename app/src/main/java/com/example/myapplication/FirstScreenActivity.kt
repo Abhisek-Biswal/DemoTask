@@ -1,86 +1,112 @@
 package com.example.myapplication
 
 
-import android.app.Activity
+
+import android.app.AlertDialog
 import android.content.Intent
+import android.content.pm.PackageManager
 import android.net.Uri
-import androidx.appcompat.app.AppCompatActivity
+import android.os.Build
 import android.os.Bundle
-import android.provider.MediaStore
+import android.provider.Settings
 import android.view.View
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
-import androidx.activity.result.ActivityResult
+import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
-import androidx.core.content.ContextCompat
+import androidx.appcompat.app.AppCompatActivity
+
 
 class FirstScreenActivity : AppCompatActivity() {
 
-    private var btn_first_screen: Button? = null
-    private var tv_data_first_screen: TextView? = null
-    private var imgView: ImageView? = null
-    private var gallerybtn: Button? = null
 
-    private var activityLauncher = registerForActivityResult<Intent, ActivityResult>(
-        ActivityResultContracts.StartActivityForResult()
-    ) { result ->
 
-        if (result.resultCode == Activity.RESULT_OK) {
-            val intent = result.data
-            if (intent != null) {
-                val data = intent.getStringExtra("result")
-                tv_data_first_screen!!.text = data
-            }
+    private val registerActivity = registerForActivityResult(ActivityResultContracts.StartActivityForResult()){
+        if (it.resultCode == 0){
+            val result = it.data
+            findViewById<TextView>(R.id.tv_data_first_screen).text = result?.getStringExtra("str").toString()
+        }
+        else{
+            val imageView = findViewById<ImageView>(R.id.img_view)
+            imageView.setImageURI(it.data?.data)
+            imageView.visibility = View.VISIBLE
+            Toast.makeText(this, "Img", Toast.LENGTH_SHORT).show()
         }
     }
 
-//    private var requestPermissionLauncher= registerForActivityResult(ActivityResultContracts.RequestPermission()
-//    ){isGranted: Boolean ->
-//        if(isGranted){
-//
-//        }
-//        else{
-//
-//        }
-//    }
+    private var count = 1
 
-    private var galleryActivityResultLauncher = registerForActivityResult(ActivityResultContracts.StartActivityForResult()){ result ->
-
-        if(result.resultCode == Activity.RESULT_OK){
-            val imageUri: Uri = result.data?.data!!
-            imgView?.setImageURI(imageUri)
-        }
-    }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_first_screen)
 
-        btn_first_screen = findViewById(R.id.btn_first_screen)
-        tv_data_first_screen = findViewById(R.id.tv_data_first_screen)
-
-        imgView = findViewById(R.id.img_view)
-        gallerybtn = findViewById(R.id.img_btn)
 
 
+        findViewById<Button>(R.id.btn_first_screen).setOnClickListener {
+            val intent = Intent(this,SecondScreenActivity::class.java)
+            registerActivity.launch(intent)
+        }
 
-
-        btn_first_screen?.setOnClickListener(View.OnClickListener {
-            val intent = Intent(this@FirstScreenActivity, SecondScreenActivity::class.java)
-            activityLauncher.launch(intent)
-        })
-
-        gallerybtn?.setOnClickListener(View.OnClickListener {
-
-            val galleryIntent = Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI)
-            galleryActivityResultLauncher.launch(galleryIntent)
-        })
+        findViewById<Button>(R.id.img_btn).setOnClickListener {
+            askPermission()
+        }
 
     }
-//    private fun requestPermission(){
-//
-//        when{
-//            ContextCompat.checkSelfPermission(this,Manifest.permission.CAMERA)
-//        }
-//    }
+    private fun askPermission(){
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU){
+            if (checkSelfPermission(android.Manifest.permission.READ_EXTERNAL_STORAGE) == PackageManager.PERMISSION_DENIED){
+                val permissions = arrayOf(android.Manifest.permission.READ_EXTERNAL_STORAGE)
+                requestPermissions(permissions,2)
+
+            }else{
+                pickImageFromGallery()
+            }
+        }else{
+            pickImageFromGallery()
+        }
+    }
+
+    private fun pickImageFromGallery() {
+        val intent = Intent(Intent.ACTION_PICK)
+        intent.type = "image/*"
+        registerActivity.launch(intent)
+    }
+
+    override fun onRequestPermissionsResult(
+        requestCode: Int,
+        permissions: Array<out String>,
+        grantResults: IntArray
+    ) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults)
+
+        if (grantResults.isNotEmpty() && grantResults[0] == PackageManager.PERMISSION_GRANTED){
+            pickImageFromGallery()
+        }else{
+            if(count > 2){
+                val alertDialog = AlertDialog.Builder(this)
+                val dialog = alertDialog.create()
+                alertDialog.apply {
+                    setTitle("Permission Denied")
+                    setMessage("You have to give permission")
+                    setPositiveButton("Ok"){
+                            _,_ ->  val intent = Intent(Settings.ACTION_APPLICATION_DETAILS_SETTINGS)
+                        val uri = Uri.fromParts("package",packageName,null)
+                        intent.data = uri
+                        startActivity(intent)
+                    }
+                    setNegativeButton("Cancel"){
+                            _,_ -> dialog.dismiss()
+                    }
+                }.show()
+            }
+            count++
+
+
+        }
+    }
 }
+
+
+
+

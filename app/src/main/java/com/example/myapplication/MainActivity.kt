@@ -94,5 +94,8 @@ class MainActivity : AppCompatActivity() {
         findViewById<Button>(R.id.material_dailog_btn).setOnClickListener {
             startActivity(Intent(this,MaterialDailogAct::class.java))
         }
+        findViewById<Button>(R.id.fragment_btn).setOnClickListener {
+            startActivity(Intent(this,FragmentDemoAct::class.java))
+        }
     }
 }

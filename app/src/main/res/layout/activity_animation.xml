@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AnimationAct">
+
+    <ImageView
+        android:id="@+id/ball_iv"
+        android:layout_width="200dp"
+        android:layout_height="100dp"
+        app:srcCompat="@drawable/ic_cricketball"
+        android:transitionName="picture"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="20dp"/>
+
+    <Button
+        android:id="@+id/blink_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Blink"
+        android:layout_marginTop="40dp"
+        app:layout_constraintEnd_toStartOf="@+id/rotate_btn"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ball_iv" />
+
+    <Button
+        android:id="@+id/rotate_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Roatate"
+        android:layout_marginTop="40dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/blink_btn"
+        app:layout_constraintTop_toBottomOf="@+id/ball_iv" />
+
+    <Button
+        android:id="@+id/fade_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Fade"
+        android:layout_marginTop="20dp"
+        app:layout_constraintEnd_toStartOf="@+id/move_btn"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/blink_btn" />
+
+    <Button
+        android:id="@+id/move_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Move"
+        android:layout_marginTop="20dp"
+        app:layout_constraintStart_toEndOf="@id/fade_btn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rotate_btn" />
+
+    <Button
+        android:id="@+id/zoom_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Zoom"
+        android:layout_marginTop="20dp"
+        app:layout_constraintEnd_toStartOf="@+id/bounced_btn"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/fade_btn" />
+
+    <Button
+        android:id="@+id/bounced_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Bounced"
+        android:layout_marginTop="20dp"
+        app:layout_constraintStart_toEndOf="@id/zoom_btn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/move_btn"
+        />
+
+    <Button
+        android:id="@+id/single_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Single"
+        android:layout_marginTop="20dp"
+        app:layout_constraintEnd_toStartOf="@+id/pair_btn"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/zoom_btn" />
+
+    <Button
+        android:id="@+id/pair_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Pair"
+        android:layout_marginTop="20dp"
+        app:layout_constraintStart_toEndOf="@+id/single_btn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/bounced_btn" />
+
+    <Button
+        android:id="@+id/activity_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Bottom Animation"
+        android:transitionName="btn"
+        android:layout_marginTop="20dp"
+        app:layout_constraintEnd_toEndOf="@+id/pair_btn"
+        app:layout_constraintStart_toStartOf="@+id/single_btn"
+        app:layout_constraintTop_toBottomOf="@+id/pair_btn" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
