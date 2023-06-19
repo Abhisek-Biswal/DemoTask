@@ -97,5 +97,8 @@ class MainActivity : AppCompatActivity() {
         findViewById<Button>(R.id.fragment_btn).setOnClickListener {
             startActivity(Intent(this,FragmentDemoAct::class.java))
         }
+        findViewById<Button>(R.id.animation_btn).setOnClickListener {
+            startActivity(Intent(this,AnimationAct::class.java))
+        }
     }
 }

@@ -287,6 +287,17 @@
             app:layout_constraintStart_toStartOf="@+id/material_dailog_btn"
             app:layout_constraintTop_toBottomOf="@+id/material_dailog_btn" />
 
+        <Button
+            android:id="@+id/animation_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:background="@color/purple_700"
+            android:padding="5dp"
+            android:text="Animation Task"
+            app:layout_constraintEnd_toEndOf="@+id/fragment_btn"
+            app:layout_constraintStart_toStartOf="@+id/fragment_btn"
+            app:layout_constraintTop_toBottomOf="@+id/fragment_btn" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>
