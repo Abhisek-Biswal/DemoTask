@@ -54,7 +54,7 @@ class FirstScreenActivity : AppCompatActivity() {
 
     }
     private fun askPermission(){
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU){
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M){
             if (checkSelfPermission(android.Manifest.permission.READ_EXTERNAL_STORAGE) == PackageManager.PERMISSION_DENIED){
                 val permissions = arrayOf(android.Manifest.permission.READ_EXTERNAL_STORAGE)
                 requestPermissions(permissions,2)

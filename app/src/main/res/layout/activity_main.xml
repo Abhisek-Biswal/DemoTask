@@ -310,5 +310,18 @@
             app:layout_constraintEnd_toEndOf="@+id/animation_btn"
             app:layout_constraintStart_toStartOf="@+id/animation_btn"
             app:layout_constraintTop_toBottomOf="@+id/animation_btn" />
+
+        <Button
+            android:id="@+id/broadcastreceiver_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:background="@color/purple_700"
+            android:padding="5dp"
+            android:text="Broad Cast Task"
+            android:elegantTextHeight="@+id/save_file_btn"
+            app:layout_constraintStart_toStartOf="@+id/save_file_btn"
+            app:layout_constraintTop_toBottomOf="@+id/save_file_btn"/>
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>

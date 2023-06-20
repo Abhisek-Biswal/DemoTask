@@ -1,8 +1,11 @@
 package com.example.myapplication
 
+import android.content.ContentValues.TAG
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
+import android.os.Parcelable
+import android.util.Log
 import android.widget.Button
 import android.widget.EditText
 import android.widget.ImageView
@@ -22,10 +25,16 @@ class IntentAct : AppCompatActivity() {
         clickBtn = findViewById(R.id.btn_link)
         image = findViewById(R.id.iv)
 
-        if (intent.hasExtra("android.intent.extra.STREAM")) {
-            val bundle = intent?.extras?.getString("android.intent.extra.STREAM")
-            val uri = Uri.parse(bundle.toString())
-            image.setImageURI(uri)
+
+        val isActivityLaunchedFromActionSend = intent?.action == Intent.ACTION_SEND
+        val isImageData = intent.type?.startsWith("image/") == true
+
+        if (isActivityLaunchedFromActionSend && isImageData) {
+
+            //  Handle received image data
+            val sentImageURI = intent.getParcelableExtra<Parcelable>(Intent.EXTRA_STREAM) as? Uri
+            image.setImageURI(sentImageURI)
+
         }
 
         clickBtn.setOnClickListener {
@@ -52,5 +61,10 @@ class IntentAct : AppCompatActivity() {
             )
             startActivity(chooser)
         }
+
+
+
+
     }
+
 }

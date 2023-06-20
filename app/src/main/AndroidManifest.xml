@@ -14,6 +14,10 @@
         tools:ignore="ScopedStorage" />
     <uses-permission android:name="android.permission.READ_MEDIA_IMAGES" />
 
+    <uses-permission android:name="android.permission.BATTERY_STATS"
+        tools:ignore="ProtectedPermissions" />
+
+
     <application
         android:name=".container.BaseApplication"
         android:allowBackup="true"
@@ -24,6 +28,14 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MyApplication"
         tools:targetApi="31">
+        <activity
+            android:name=".BroadCastRecieverAct"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.BATTERY_CHANGED" />
+            </intent-filter>
+        </activity>
         <activity
             android:name=".SaveFileAct"
             android:exported="false">
@@ -65,13 +77,13 @@
         </activity>
         <activity
             android:name=".IntentAct"
-            android:exported="false">
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.SEND" />
-
                 <category android:name="android.intent.category.DEFAULT" />
 
-                <data android:mimeType="text/plain" />
+                <data android:mimeType="image/*" />
+
             </intent-filter>
         </activity>
         <activity
@@ -267,3 +279,5 @@
     </application>
 
 </manifest>
+
+

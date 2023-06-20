@@ -103,5 +103,8 @@ class MainActivity : AppCompatActivity() {
         findViewById<Button>(R.id.save_file_btn).setOnClickListener {
             startActivity(Intent(this,SaveFileAct::class.java))
         }
+        findViewById<Button>(R.id.broadcastreceiver_btn).setOnClickListener {
+            startActivity(Intent(this,BroadCastRecieverAct::class.java))
+        }
     }
 }
