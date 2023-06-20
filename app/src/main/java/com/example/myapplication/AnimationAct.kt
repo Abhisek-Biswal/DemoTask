@@ -4,14 +4,13 @@ import android.animation.ObjectAnimator
 import android.annotation.SuppressLint
 import android.app.ActivityOptions
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.view.animation.AnimationUtils
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
-import androidx.core.app.ActivityOptionsCompat
+import androidx.appcompat.app.AppCompatActivity
 import android.util.Pair as UtilPair
 
 class AnimationAct : AppCompatActivity() {
@@ -29,6 +28,7 @@ class AnimationAct : AppCompatActivity() {
     lateinit var singleTransitionBtn: Button
     lateinit var slideUpButton: Button
 
+
     @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -45,6 +45,7 @@ class AnimationAct : AppCompatActivity() {
         textViewTitle = findViewById(R.id.tv_title)
         singleTransitionBtn= findViewById(R.id.single_transition_btn)
         slideUpButton= findViewById(R.id.activity_btn)
+
 
         objectAnimator= ObjectAnimator.ofFloat(imgView,"x",600.0f)
 
@@ -97,11 +98,17 @@ class AnimationAct : AppCompatActivity() {
 
         slideUpButton.setOnClickListener {
 
+            val bundle = ActivityOptions.makeSceneTransitionAnimation(this).toBundle()
+            val intent = Intent(this,AnimShowAct::class.java)
+            startActivity(intent,bundle)
+
+            }
+
         }
 
 
 
 
 
-    }
+
 }

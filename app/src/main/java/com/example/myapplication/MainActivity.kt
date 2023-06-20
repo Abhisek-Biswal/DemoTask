@@ -100,5 +100,8 @@ class MainActivity : AppCompatActivity() {
         findViewById<Button>(R.id.animation_btn).setOnClickListener {
             startActivity(Intent(this,AnimationAct::class.java))
         }
+        findViewById<Button>(R.id.save_file_btn).setOnClickListener {
+            startActivity(Intent(this,SaveFileAct::class.java))
+        }
     }
 }

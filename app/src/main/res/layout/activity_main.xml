@@ -299,5 +299,16 @@
             app:layout_constraintStart_toStartOf="@+id/fragment_btn"
             app:layout_constraintTop_toBottomOf="@+id/fragment_btn" />
 
+        <Button
+            android:id="@+id/save_file_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:background="@color/purple_700"
+            android:padding="5dp"
+            android:text="Save File Task"
+            app:layout_constraintEnd_toEndOf="@+id/animation_btn"
+            app:layout_constraintStart_toStartOf="@+id/animation_btn"
+            app:layout_constraintTop_toBottomOf="@+id/animation_btn" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>
