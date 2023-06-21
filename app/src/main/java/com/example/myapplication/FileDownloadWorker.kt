@@ -2,6 +2,9 @@ package com.example.myapplication
 
 import android.content.Context
 import android.util.Log
+import androidx.work.Worker
+import androidx.work.WorkerParameters
+import androidx.work.workDataOf
 import java.io.FileOutputStream
 import java.io.InputStream
 import java.io.OutputStream
@@ -15,7 +18,7 @@ class FileDownloadWorker(context: Context, workerParams: WorkerParameters) :
     override fun doWork(): Result {
 
 
-        val imageUrl = inputData.getString("imgUrl")
+        val imageUrl = inputData.getString("imageUrl")
         Log.d("Img", imageUrl.toString())
         if (imageUrl == null) return Result.failure()
         downloadImg(imageUrl)

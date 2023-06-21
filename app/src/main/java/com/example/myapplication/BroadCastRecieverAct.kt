@@ -1,5 +1,6 @@
 package com.example.myapplication
 
+import android.Manifest
 import android.annotation.SuppressLint
 import android.app.NotificationChannel
 import android.app.NotificationManager
@@ -7,11 +8,13 @@ import android.content.BroadcastReceiver
 import android.content.Context
 import android.content.Intent
 import android.content.IntentFilter
+import android.content.pm.PackageManager
 import android.os.Build
 import android.os.Bundle
 import android.widget.Button
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.app.ActivityCompat
 import androidx.core.app.NotificationCompat
 import androidx.core.app.NotificationManagerCompat
 
@@ -47,6 +50,13 @@ class BroadCastRecieverAct : AppCompatActivity() {
                 priority = NotificationCompat.PRIORITY_DEFAULT
             }
             with(NotificationManagerCompat.from(this)){
+                if (ActivityCompat.checkSelfPermission(
+                        this@BroadCastRecieverAct,
+                        Manifest.permission.POST_NOTIFICATIONS
+                    ) != PackageManager.PERMISSION_GRANTED
+                ) {
+                    return
+                }
                 notify(2,builder.build())
             }
         }
@@ -74,8 +84,7 @@ class BroadCastRecieverAct : AppCompatActivity() {
         }
 
 
-    }
-
-
-
 }
+
+
+

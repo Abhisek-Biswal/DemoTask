@@ -109,5 +109,8 @@ class MainActivity : AppCompatActivity() {
         findViewById<Button>(R.id.koin_btn).setOnClickListener {
             startActivity(Intent(this,KoinAct::class.java))
         }
+        findViewById<Button>(R.id.work_manager_btn).setOnClickListener {
+            startActivity(Intent(this,WorkManagerAct::class.java))
+        }
     }
 }

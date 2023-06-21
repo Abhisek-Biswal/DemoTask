@@ -34,7 +34,7 @@ class ActionOnBroadCastReciever : AppCompatActivity() {
     }
     fun register(percentageData: Int) {
         statusTv?.text = "Start"
-        // this.registerReceiver(batteryBroadCast, IntentFilter(Intent.ACTION_BATTERY_CHANGED))
+
         liveBatteryData.text = "Your battery percentage is $percentageData%"
 
     }
@@ -47,8 +47,6 @@ class ActionOnBroadCastReciever : AppCompatActivity() {
             )
             channel.description = "This Is Battery BroadCast"
 
-            //   val intent = Intent(this,ActionOnBroadCastActivity::class.java)
-            // val pendingIntent = PendingIntent.getBroadcast(this,0,intent,PendingIntent.FLAG_IMMUTABLE)
 
             val startIntent =  Intent(context,MainActivity::class.java).setAction("Start")
 
@@ -81,7 +79,6 @@ class ActionOnBroadCastReciever : AppCompatActivity() {
                 setSmallIcon(R.drawable.ic_battery_full)
                 setContentTitle("Activity Second")
                 priority = NotificationCompat.PRIORITY_HIGH
-                //  setContentIntent(pendingIntent)
                 setAutoCancel(true)
                 layoutRemote.setTextViewText(
                     R.id.statusCheck_tv,
@@ -98,7 +95,7 @@ class ActionOnBroadCastReciever : AppCompatActivity() {
     fun unregister() {
         statusTv?.text = "Stop"
         Toast.makeText(this, "stop", Toast.LENGTH_SHORT).show()
-//        unregisterReceiver(batteryBroadCast)
+
     }
 
 }

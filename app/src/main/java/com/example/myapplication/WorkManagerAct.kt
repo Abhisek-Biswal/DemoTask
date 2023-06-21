@@ -1,5 +1,6 @@
 package com.example.myapplication
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import android.os.Handler
 import android.util.Log
@@ -7,16 +8,13 @@ import android.widget.Button
 import android.widget.ProgressBar
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
-import androidx.constraintlayout.widget.Constraints
-import androidx.work.Data
-import androidx.work.NetworkType
-import androidx.work.OneTimeWorkRequestBuilder
-import androidx.work.WorkManager
+import androidx.work.*
 import java.util.jar.Pack200
 
 class WorkManagerAct : AppCompatActivity() {
 
-    val mWorkManager = WorkManager.getInstance()
+    private val mWorkManager = WorkManager.getInstance()
+    @SuppressLint("SetTextI18n")
     override fun onCreate(savedInstanceState: Bundle?) {
 
         val workManager = WorkManager.getInstance()
@@ -32,9 +30,9 @@ class WorkManagerAct : AppCompatActivity() {
             mWorkManager.cancelAllWorkByTag("demo")
         }
 
-        // val constrains = Constraints.Builder().setRequiredNetworkType(NetworkType.UNMETERED).build()
+
         val inputData = Data.Builder()
-            .putString("imgUrl","https://upload.wikimedia.org/wikipedia/commons/thumb/f/ff/Pizigani_1367_Chart_10MB.jpg/8192px-Pizigani_1367_Chart_10MB.jpg")
+            .putString("imageUrl","https://upload.wikimedia.org/wikipedia/commons/thumb/f/ff/Pizigani_1367_Chart_10MB.jpg/8192px-Pizigani_1367_Chart_10MB.jpg")
             .build()
 
         val constrains = Constraints.Builder()
@@ -69,8 +67,6 @@ class WorkManagerAct : AppCompatActivity() {
                     }
 
                 }.start()
-
-//                Toast.makeText(this,.toString() , Toast.LENGTH_SHORT).show()
             }
 
         }
