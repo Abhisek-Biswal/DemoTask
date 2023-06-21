@@ -5,7 +5,7 @@ import android.content.Context
 
 private const val PREFS_NAME = "UtilShared"
 private const val KEY_NAME = "Koin DI"
-class MyUtil {
+class MyUtil(androidContext: Context) {
 
     fun saveName(context: Context, name: String) {
         val editor = context.getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE).edit()

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/statusCheck_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toEndOf="@id/icon"
+        android:layout_alignParentTop="true"
+        android:text="@string/battery_percentage"
+        android:textStyle="bold"
+        tools:ignore="MissingConstraints" />
+
+    <ImageButton
+        android:id="@+id/icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:background="@drawable/ic_battery_full"
+        android:backgroundTint="#3F51B5"
+        tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/broadCast_start"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_below="@id/statusCheck_tv"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="10dp"
+        android:textAllCaps="false"
+        android:text="Start"
+        tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/broadCast_stop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_below="@id/statusCheck_tv"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="10dp"
+        android:textAllCaps="false"
+        android:text="Stop"
+        tools:ignore="MissingConstraints" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -106,5 +106,8 @@ class MainActivity : AppCompatActivity() {
         findViewById<Button>(R.id.broadcastreceiver_btn).setOnClickListener {
             startActivity(Intent(this,BroadCastRecieverAct::class.java))
         }
+        findViewById<Button>(R.id.koin_btn).setOnClickListener {
+            startActivity(Intent(this,KoinAct::class.java))
+        }
     }
 }

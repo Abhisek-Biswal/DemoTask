@@ -33,7 +33,7 @@ class RetrofritDemo : AppCompatActivity() {
         // builder and passing our base url
 
         val retrofit = Retrofit.Builder()
-            .baseUrl("https://dummyjson.com/")
+            .baseUrl(PRODUCT_LIST_URL)
 
             // on below line we are calling add Converter
             // factory as GSON converter factory.
@@ -72,6 +72,10 @@ class RetrofritDemo : AppCompatActivity() {
             }
         })
     }
+    companion object {
+        const val PRODUCT_LIST_URL = "https://dummyjson.com/"
+    }
+
 }
 
 

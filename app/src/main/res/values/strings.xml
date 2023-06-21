@@ -82,6 +82,7 @@
     <string name="click">Click</string>
     <string name="contact_list">Contact List</string>
     <string name="battery_status">Battery Status</string>
+    <string name="battery_percentage">Battery Percentage</string>
 </resources>
 
 
