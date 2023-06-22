@@ -50,17 +50,12 @@ class MaterialDailogAct : AppCompatActivity() {
                     val selectedDate = Calendar.getInstance()
                     selectedDate.set(year, monthOfYear, dayOfMonth)
 
-                    if (true) {
-                        val  selectedFromDate = selectedDate
-                        fromDatetxt.setText(formatDate(selectedFromDate))
-                    } else {
-                        val  selectedToDate = selectedDate
-                        toDatetxt.setText(formatDate(selectedToDate))
-                    }
+                    fromDatetxt.setText(formatDate(selectedDate))
+
                     // Set the minimum date for the "to date" DatePickerDialog
                     val minDateCalendar = Calendar.getInstance()
                     minDateCalendar.set(year, monthOfYear, dayOfMonth)
-                    minDateCalendar.add(Calendar.DAY_OF_MONTH, 1) // Add one day to the selected "from date"
+                    minDateCalendar.add(Calendar.DAY_OF_MONTH,0)
                     val minDate = minDateCalendar.timeInMillis
 
                     val toDatePickerDialog = DatePickerDialog(this, { _, toYear, toMonthOfYear, toDayOfMonth ->
@@ -98,13 +93,7 @@ class MaterialDailogAct : AppCompatActivity() {
                     val selectedDate = Calendar.getInstance()
                     selectedDate.set(year, monthOfYear, dayOfMonth)
 
-                    if (false) {
-                        val  selectedFromDate = selectedDate
-                        fromDatetxt.setText(formatDate(selectedFromDate))
-                    } else {
-                        val  selectedToDate = selectedDate
-                        toDatetxt.setText(formatDate(selectedToDate))
-                    }
+                    toDatetxt.setText(formatDate(selectedDate))
                 },
                     currentDate.get(Calendar.YEAR),
                     currentDate.get(Calendar.MONTH),
@@ -139,6 +128,8 @@ class MaterialDailogAct : AppCompatActivity() {
 
     }
     private fun isValid(): Boolean {
+
+
         val fromDateText = fromDatetxt.text.toString()
         val toDateText = toDatetxt.text.toString()
         val timeText = timetxt.text.toString()

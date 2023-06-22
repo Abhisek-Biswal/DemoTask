@@ -39,6 +39,7 @@
         android:ems="11"
         android:inputType="date"
         android:focusableInTouchMode="false"
+        android:focusable="false"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/edfromdate"/>
@@ -50,6 +51,7 @@
         android:hint="Select Time"
         android:ems="11"
         android:focusableInTouchMode="false"
+        android:focusable="false"
         android:inputType="datetime"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

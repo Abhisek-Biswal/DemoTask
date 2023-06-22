@@ -1,15 +1,19 @@
 package com.example.myapplication
 
 import android.content.Context
+import android.os.Environment
 import android.util.Log
 import androidx.work.Worker
 import androidx.work.WorkerParameters
 import androidx.work.workDataOf
+import java.io.File
 import java.io.FileOutputStream
 import java.io.InputStream
 import java.io.OutputStream
 import java.net.HttpURLConnection
 import java.net.URL
+import java.text.SimpleDateFormat
+import java.util.*
 
 class FileDownloadWorker(context: Context, workerParams: WorkerParameters) :
     Worker(context, workerParams) {
@@ -41,7 +45,14 @@ class FileDownloadWorker(context: Context, workerParams: WorkerParameters) :
             Log.d("Size", connection.contentLength.toString())
             connection.connect()
             input = connection.inputStream
-            outPut = FileOutputStream("/storage/emulated/0/DCIM/wikiImage.jpg")
+
+            val timeStamp = SimpleDateFormat("yyyyMMdd_HHmmss", Locale.getDefault()).format(Date())
+            val fileName = "image_$timeStamp.jpg"
+            val storageDir = applicationContext.getExternalFilesDir(Environment.DIRECTORY_DCIM)
+            val outFile = File(storageDir, fileName)
+            outPut = FileOutputStream(outFile)
+
+
 
             val data = ByteArray(2048)
             var total = 0
@@ -66,3 +77,6 @@ class FileDownloadWorker(context: Context, workerParams: WorkerParameters) :
     }
 
 }
+
+
+
