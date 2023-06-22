@@ -3,35 +3,22 @@ package com.example.myapplication
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.widget.ImageView
+import androidx.databinding.BindingAdapter
 import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.example.myapplication.databinding.ItemOfProductsBinding
+import com.squareup.picasso.Picasso
 
-class ProductAdapter( val productList :  MutableList<Product>) : RecyclerView.Adapter<ProductAdapter.ProductViewHolder>() {
-    private lateinit var onClickListener: OnClickListener
-
-
-
+class ProductAdapter( val productList :  MutableList<Product>, val clickListener: (Product) -> Unit) : RecyclerView.Adapter<ProductAdapter.ProductViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int):  ProductViewHolder {
-//        val  itemView = LayoutInflater.from(parent.context).inflate(R.layout.item_of_products,parent,false)
-//        return ProductViewHolder(itemView)
+
         val itemView= LayoutInflater.from(parent.context)
         val binding= DataBindingUtil.inflate<ItemOfProductsBinding>(itemView,R.layout.item_of_products,parent,false)
-        return ProductViewHolder (binding)
+        return ProductViewHolder (binding){
+            clickListener(productList[it])
+        }
     }
-//    override fun onBindViewHolder(holder: ProductViewHolder, position: Int) {
-//
-//        holder.bind(productList[position])
-////        val pos = productList[position]
-////        holder.productTitle.text = pos.title
-////        holder.productPrice.text = "$"+pos.price.toString()
-////        holder.productCategory.text = pos.category
-//        holder.itemView.setOnClickListener {
-//            onClickListener.onClick(position,productList)
-//        }
-//        Picasso.get().load(pos.thumbnail).into(holder.productImg)
-//    }
 
     override fun getItemCount() :Int{
         return productList.size
@@ -39,61 +26,27 @@ class ProductAdapter( val productList :  MutableList<Product>) : RecyclerView.Ad
 
     override fun onBindViewHolder(holder: ProductViewHolder, position: Int) {
 
-        holder.bind(productList[position])
-//        val pos = productList[position]
-//        holder.productTitle.text = pos.title
-//        holder.productPrice.text = "$"+pos.price.toString()
-//        holder.productCategory.text = pos.category
-//        holder.itemView.setOnClickListener {
-//            onClickListener.onClick(position,productList)
-//        }
-//        Picasso.get().load(pos.thumbnail).into(holder.productImg)
+        holder.binding.productItem = productList[position]
+
     }
-    fun setOnClickListener(onClickListener: OnClickListener) {
-        this.onClickListener = onClickListener
-    }
+    class ProductViewHolder(val binding: ItemOfProductsBinding,clickAtPosition : (Int) -> Unit) : RecyclerView.ViewHolder(binding.root) {
 
-    interface OnClickListener {
-
-        fun onClick(position: Int, productlist: MutableList<Product>)
-    }
-//    class ProductViewHolder(val binding: ItemOfProductsBinding) : RecyclerView.ViewHolder(binding.root) {
-//        fun bind(product: Product) {
-//
-//
-//            val productImg = itemView.findViewById<ImageView>(R.id.imageView)
-//
-//            val productTitle = binding.textView.text = product.title
-//            val productPrice = binding.textView2.text = product.price
-//            val productCategory = binding.textView3.text = product.category
-//        }
-//    }
-
-    class ProductViewHolder(val binding: ItemOfProductsBinding) : RecyclerView.ViewHolder(binding.root) {
-        fun bind(product: Product) {
-
-
-            val productImg = itemView.findViewById<ImageView>(R.id.imageView)
-
-            binding.textView.text = product.title
-            binding.textView2.text = product.price.toString()
-            binding.textView3.text = product.category
+        init {
+            itemView.setOnClickListener {
+                clickAtPosition(adapterPosition)
+            }
         }
     }
-
-
-
-
-
-
+}
+@BindingAdapter("imgUrl")
+fun ImageView.loadImg(url: String) {
+    Picasso.get().load(url).placeholder(R.drawable.ic_baseline_image).into(this)
 }
 
 
 
 
-//         val productTitle = itemView.findViewById<TextView>(R.id.textView)
-//         val productPrice = itemView.findViewById<TextView>(R.id.textView3)
-//         val productCategory = itemView.findViewById<TextView>(R.id.textView2)
+
 
 
 

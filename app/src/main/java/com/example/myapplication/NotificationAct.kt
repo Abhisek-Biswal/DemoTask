@@ -162,7 +162,7 @@ class NotificationAct : AppCompatActivity() {
 
 
             val myBitmap = BitmapFactory.decodeResource(resources,
-                R.drawable.ic_image)
+                R.drawable.ic_image1)
 
 
 

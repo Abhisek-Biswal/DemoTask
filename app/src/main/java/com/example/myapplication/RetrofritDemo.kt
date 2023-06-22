@@ -12,70 +12,62 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
 
-
-
-
-
 class RetrofritDemo : AppCompatActivity() {
     lateinit var recyclerView: RecyclerView
+    lateinit var productsAdapter: ProductAdapter
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_retrofrit_demo)
 
-
-
-        recyclerView=findViewById(R.id.recycler_view)
-
-        println(getData())
-    }
-    private fun getData() {
-        // on below line we are creating a retrofit
-        // builder and passing our base url
-
         val retrofit = Retrofit.Builder()
             .baseUrl(PRODUCT_LIST_URL)
-
-            // on below line we are calling add Converter
-            // factory as GSON converter factory.
-            // at last we are building our retrofit builder.
             .addConverterFactory(GsonConverterFactory.create())
             .build()
 
-        // below line is to create an instance for our retrofit api class.
-        val retrofitAPI = retrofit.create(ProductApi::class.java)
+        val productServices = retrofit.create(ProductApi::class.java)
 
-        val call: Call<ProductList> = retrofitAPI.getProducts()
 
-        // on below line we are making a call.
-        call.enqueue(object : Callback<ProductList?> {
-            override fun onResponse(call: Call<ProductList?>, response: Response<ProductList?>) {
-                val retrofit2= response.body()?.let {ProductAdapter(it.products)}
-                recyclerView.adapter = retrofit2 //we set the adapter of recycler view to product adapter
+        fetchProducts(productServices.getProducts())
+    }
 
-                retrofit2!!.setOnClickListener(object : ProductAdapter.OnClickListener {
-                    override fun onClick(position: Int, productlist: MutableList<Product>) {
-                        val intent = Intent(this@RetrofritDemo, ProductDetailActivity::class.java)
-                        val products = productlist[position]
-                        val data = Product(products.id,products.title,products.description,products.price,
-                            products.discountPercentage,products.rating,products.stock,products.brand,
-                            products.category,products.thumbnail,products.images)
+    private fun fetchProducts(listOfProduct: Call<ProductList>) {
+        val call: Call<ProductList> = listOfProduct
+        call.enqueue(object : Callback<ProductList> {
+            override fun onResponse(call: Call<ProductList>, response: Response<ProductList>) {
+//                binding.progressProducts.visibility = View.GONE
+//                binding.recyclerProducts.visibility = View.VISIBLE
 
-                        intent.putExtra("abc",data)
-                        startActivity(intent)
-                    }
-                })
+
+                showProducts(response.body()?.products)
+
             }
-            override fun onFailure(call: Call<ProductList?>, t: Throwable) {
-                // displaying an error message in toast
-                Toast.makeText(this@RetrofritDemo, "Fail to get the data..", Toast.LENGTH_SHORT)
-                    .show()
+
+            override fun onFailure(call: Call<ProductList>, t: Throwable) {
+                println(t)
             }
+
         })
     }
+
+    private fun showProducts(productsList: ArrayList<Product>?) {
+        if (productsList != null) {
+            productsAdapter = ProductAdapter(productsList) {
+                println(it.id)
+                val intent = Intent(this, ProductDetailActivity::class.java)
+                intent.putExtra("productId", it.id)
+                startActivity(intent)
+            }
+//            binding.recyclerProducts.adapter = productsAdapter
+        } else {
+            Toast.makeText(this, R.string.no_products, Toast.LENGTH_SHORT).show()
+        }
+    }
+
+
     companion object {
         const val PRODUCT_LIST_URL = "https://dummyjson.com/"
     }
-
 }
 
 

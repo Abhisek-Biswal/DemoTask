@@ -1,4 +1,4 @@
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <string name="app_name">My Application</string>
     <string name="selected_item">Selected item:</string>
     <string name="register_screen">Register Screen</string>
@@ -83,6 +83,16 @@
     <string name="contact_list">Contact List</string>
     <string name="battery_status">Battery Status</string>
     <string name="battery_percentage">Battery Percentage</string>
+
+    <string name="dollar_sign">Price : $%1$d</string>
+    <string name="no_products">No Product Available</string>
+    <string name="brandName">Company Name : %1$s</string>
+    <string name="price_sign">Price : $</string>
+    <string name="product_name_title">Product : </string>
+    <string name="enter_any_topic">Enter Any Topic</string>
+    <string name="save">save</string>
+    <string name="userinfo">UserInfo</string>
+    <string name="edit">Edit</string>
 </resources>
 
 

@@ -8,7 +8,7 @@
            name="productItem"
            type="com.example.myapplication.Product" />
         <variable
-            name="imageUrl"
+            name="imgUrl"
             type="String" />
     </data>
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -27,7 +27,8 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             tools:ignore="MissingConstraints"/>
-<!--            app:imageUrl="@{imageUrl}"-->
+<!--            app:imageUrl="@{imgUrl}"-->
+
 
 
 

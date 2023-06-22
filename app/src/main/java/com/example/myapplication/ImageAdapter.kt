@@ -7,7 +7,7 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import androidx.viewpager.widget.PagerAdapter
 import com.squareup.picasso.Picasso
-import java.util.Objects
+import java.util.*
 
 class ImgAdapter(val context : Context, private val imagelist :List<String>) : PagerAdapter()  {
     private var layoutInflater: LayoutInflater? = null
@@ -19,7 +19,7 @@ class ImgAdapter(val context : Context, private val imagelist :List<String>) : P
         val view =    layoutInflater!!.inflate(R.layout.imageslider, container, false)
         imgview = view.findViewById(R.id.imgviewproducts)
 
-        Picasso.get().load(imagelist[position]).into(imgview)
+        Picasso.get().load(imagelist[position]).placeholder(R.drawable.ic_baseline_image).into(imgview)
         Objects.requireNonNull(container).addView(view)
         return view
     }

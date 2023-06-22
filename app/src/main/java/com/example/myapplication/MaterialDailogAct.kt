@@ -1,18 +1,14 @@
 package com.example.myapplication
 
 import android.annotation.SuppressLint
-import android.app.Activity
 import android.app.DatePickerDialog
 import android.app.Dialog
 import android.app.TimePickerDialog
-import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
-import androidx.activity.result.ActivityResultLauncher
-import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import java.util.*
@@ -22,6 +18,11 @@ class MaterialDailogAct : AppCompatActivity() {
     lateinit var fromDatetxt: EditText
     lateinit var toDatetxt: EditText
     lateinit var timetxt: EditText
+
+    var year = 0
+    var month = 0
+    var day = 0
+
 
 
 
@@ -56,16 +57,40 @@ class MaterialDailogAct : AppCompatActivity() {
                         val  selectedToDate = selectedDate
                         toDatetxt.setText(formatDate(selectedToDate))
                     }
+                    // Set the minimum date for the "to date" DatePickerDialog
+                    val minDateCalendar = Calendar.getInstance()
+                    minDateCalendar.set(year, monthOfYear, dayOfMonth)
+                    minDateCalendar.add(Calendar.DAY_OF_MONTH, 1) // Add one day to the selected "from date"
+                    val minDate = minDateCalendar.timeInMillis
+
+                    val toDatePickerDialog = DatePickerDialog(this, { _, toYear, toMonthOfYear, toDayOfMonth ->
+                        val selectedToDate = Calendar.getInstance()
+                        selectedToDate.set(toYear, toMonthOfYear, toDayOfMonth)
+                        toDatetxt.setText(formatDate(selectedToDate))
+                    }, year, month, day)
+
+                    toDatePickerDialog.datePicker.minDate = minDate
+                    toDatePickerDialog.show()
                 },
+
                     currentDate.get(Calendar.YEAR),
                     currentDate.get(Calendar.MONTH),
                     currentDate.get(Calendar.DAY_OF_MONTH)
                 )
 
+                if (toDatetxt.text.isEmpty()) {
+                    datePickerDialog.datePicker.minDate = System.currentTimeMillis()
+                    datePickerDialog.show()
+                } else {
+                    toDatetxt.text.clear()
+                    datePickerDialog.datePicker.minDate = System.currentTimeMillis()
+                    currentDate.set(year, month, day)
+                    datePickerDialog.datePicker.minDate = currentDate.timeInMillis
+                    datePickerDialog.show()
 
-                datePickerDialog.datePicker.minDate=System.currentTimeMillis()
-                datePickerDialog.show()
+                }
             }
+
 
             toDatetxt.setOnClickListener {
                 val currentDate = Calendar.getInstance()
@@ -120,19 +145,19 @@ class MaterialDailogAct : AppCompatActivity() {
         if (fromDateText.isEmpty() && toDateText.isEmpty() && timeText.isEmpty()) {
             Toast.makeText( applicationContext,"Please Enter all the fields", Toast.LENGTH_SHORT).show()
 
-
-//            if(fromDateText.isEmpty()){
-//                Toast.makeText( applicationContext,"Please Enter From Date Text Field" ,Toast.LENGTH_SHORT).show()
-//            }
-//            if(toDateText.isEmpty()){
-//                Toast.makeText( applicationContext,"Please Enter To Date Text Field" ,Toast.LENGTH_SHORT).show()
-//            }
-//            if(timeText.isEmpty()){
-//                Toast.makeText( applicationContext,"Please Enter To Time Text Field" ,Toast.LENGTH_SHORT).show()
-//            }
-            return false
+        }else if(fromDateText.isEmpty()) {
+            errorMessage("please select the from date")
+        }else if(toDateText.isEmpty()){
+            errorMessage("please select the to date")
+        }else if(timeText.isEmpty()){
+            errorMessage("please select the time")
+        }else if(toDateText < fromDateText){
+            errorMessage("Please check the date")
         }
-        return true
+        else{
+            return true
+        }
+        return false
     }
 
     private fun showConfirmationDialog(dialog1: Dialog) {
@@ -165,7 +190,12 @@ class MaterialDailogAct : AppCompatActivity() {
         val timeFormat = android.text.format.DateFormat.getTimeFormat(this)
         return timeFormat.format(calendar.time)
     }
+
+    private  fun errorMessage(msg : String){
+      AlertDialog.Builder(this).setTitle("Error").setMessage(msg).setPositiveButton("Ok",null).show()
+    }
 }
+
 
 
 
