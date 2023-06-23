@@ -8,51 +8,83 @@
     android:orientation="vertical">
 
     <TextView
-        android:id="@+id/tv_login"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Login"
-        android:gravity="center"
-        />
+        android:textAlignment="center"
+        android:textSize="30sp" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="5dp"
+        android:background="@color/purple_700" />
+
     <EditText
-        android:id="@+id/edtv1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="20sp"
-        android:inputType="text" />
-    <EditText
-        android:id="@+id/edtv2"
+        android:textSize="30sp"
+        android:background="@null"/>
+    <View
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textSize="20sp"
-        android:inputType="text"/>
+        android:layout_height="5dp"
+        android:padding="5dp"
+        android:background="@color/purple_700" />
 
     <LinearLayout
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
+        <View
+            android:layout_width="5dp"
+            android:layout_height="match_parent"
+            android:background="@color/purple_700" />
+        <EditText
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textSize="30sp"
+            android:background="@null" />
+        <View
+            android:layout_width="5dp"
+            android:layout_height="match_parent"
+            android:background="@color/purple_700" />
+    </LinearLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="5dp"
+        android:background="@color/purple_700" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:weightSum="3">
+
 
         <Button
             android:id="@+id/btn1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
-            android:text="@string/button1"/>
+            android:layout_weight="1"
+            android:text="Button"
+            android:layout_margin="2dp"/>
 
         <Button
-            android:id="@+id/btn_2"
+            android:id="@+id/btn2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="30dp"
-            android:text="@string/button2"/>
+            android:layout_weight="1"
+            android:text="Button"
+            android:layout_margin="2dp"/>
 
         <Button
+            android:id="@+id/btn3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="30dp"
-            android:text="@string/button3"/>
-
+            android:layout_weight="1"
+            android:text="Button"
+            android:layout_margin="2dp"/>
     </LinearLayout>
+
 
 </LinearLayout>
 
