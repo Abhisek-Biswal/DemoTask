@@ -32,6 +32,7 @@ class ActionOnBroadCastReciever : AppCompatActivity() {
 
         actionOnBroadCast(this)
     }
+    @SuppressLint("SetTextI18n")
     fun register(percentageData: Int) {
         statusTv?.text = "Start"
 

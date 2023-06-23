@@ -58,7 +58,7 @@ class BroadCastReciever : BroadcastReceiver() {
             e.printStackTrace()
         }
     }
-    fun actionOnBroadCast(percentageData: Int,context: Context) {
+    private fun actionOnBroadCast(percentageData: Int, context: Context) {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             val channel = NotificationChannel(
                 "BatteryAction", "BatteryChannel", NotificationManager.IMPORTANCE_HIGH

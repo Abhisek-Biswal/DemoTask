@@ -5,18 +5,14 @@ import android.os.Bundle
 import android.os.Handler
 import android.util.Log
 import android.widget.Button
-import android.widget.EditText
 import android.widget.ProgressBar
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.work.*
-
+import java.util.jar.Pack200.Packer.PROGRESS
 
 
 class WorkManagerAct : AppCompatActivity() {
-
-    lateinit var imageUrlEditText : EditText
-
 
     private val mWorkManager = WorkManager.getInstance()
     @SuppressLint("SetTextI18n")
@@ -26,9 +22,6 @@ class WorkManagerAct : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_work_manager)
 
-        imageUrlEditText= findViewById(R.id.urlDownload)
-        val imageUrl = imageUrlEditText.text.toString()
-
         val progressBar = findViewById<ProgressBar>(R.id.ImgProgressBar)
         val progressBarTv = findViewById<TextView>(R.id.progressTv)
         var i = 0
@@ -37,9 +30,8 @@ class WorkManagerAct : AppCompatActivity() {
             mWorkManager.cancelAllWorkByTag("demo")
         }
 
-
         val inputData = Data.Builder()
-            .putString("imageUrl", imageUrl)
+            .putString("imgUrl","https://upload.wikimedia.org/wikipedia/commons/thumb/f/ff/Pizigani_1367_Chart_10MB.jpg/8192px-Pizigani_1367_Chart_10MB.jpg")
             .build()
 
         val constrains = Constraints.Builder()
@@ -55,7 +47,6 @@ class WorkManagerAct : AppCompatActivity() {
 
         findViewById<Button>(R.id.DownLoadBtn).setOnClickListener {
             // Submit the WorkRequest to the system
-
             WorkManager.getInstance(this).enqueue(workRequest)
         }
 
@@ -65,7 +56,7 @@ class WorkManagerAct : AppCompatActivity() {
             if (it != null){
                 val state = it.state
                 status.text = state.toString()
-                val progress = it.progress.getInt("progress",0)
+                val progress = it.progress.getInt(PROGRESS,0)
                 Log.d("Progress",  "State: $state Current Progress: $progress")
                 Thread {
                     i = progress
@@ -75,9 +66,9 @@ class WorkManagerAct : AppCompatActivity() {
                     }
 
                 }.start()
+
             }
 
         }
-
     }
 }

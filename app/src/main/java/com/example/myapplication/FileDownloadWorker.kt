@@ -22,7 +22,7 @@ class FileDownloadWorker(context: Context, workerParams: WorkerParameters) :
     override fun doWork(): Result {
 
 
-        val imageUrl = inputData.getString("imageUrl")
+        val imageUrl = inputData.getString("imgUrl")
         Log.d("Img", imageUrl.toString())
         if (imageUrl == null) return Result.failure()
         downloadImg(imageUrl)
@@ -46,14 +46,12 @@ class FileDownloadWorker(context: Context, workerParams: WorkerParameters) :
             connection.connect()
             input = connection.inputStream
 
-            val timeStamp = SimpleDateFormat("yyyyMMdd_HHmmss", Locale.getDefault()).format(Date())
-            val fileName = "image_$timeStamp.jpg"
-            val storageDir = applicationContext.getExternalFilesDir(Environment.DIRECTORY_DCIM)
-            val outFile = File(storageDir, fileName)
-            outPut = FileOutputStream(outFile)
+            val fileName = "${System.currentTimeMillis()}.jpg"
+            val imagesDirectory = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES)
+            val image = File(imagesDirectory, fileName)
+            outPut = FileOutputStream(image)
 
-
-
+            Log.e("TAG", "downloadImg: $outPut" )
             val data = ByteArray(2048)
             var total = 0
             count = input.read(data)
@@ -70,12 +68,11 @@ class FileDownloadWorker(context: Context, workerParams: WorkerParameters) :
                 close()
             }
             input.close()
+            Log.e("TAG", "downloadImg: $outPut" )
         } catch (e: Exception) {
             e.printStackTrace()
-
         }
     }
-
 }
 
 
