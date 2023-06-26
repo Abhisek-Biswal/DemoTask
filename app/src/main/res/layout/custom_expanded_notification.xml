@@ -34,7 +34,9 @@
         android:layout_marginTop="10dp"
         android:textAllCaps="false"
         android:text="Start"
-        tools:ignore="MissingConstraints" />
+         />
+
+         />
 
     <Button
         android:id="@+id/broadCast_stop"
@@ -46,6 +48,8 @@
         android:layout_marginTop="10dp"
         android:textAllCaps="false"
         android:text="Stop"
-        tools:ignore="MissingConstraints" />
+
+
+         />
 
 </RelativeLayout>

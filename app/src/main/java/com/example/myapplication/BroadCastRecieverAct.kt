@@ -37,7 +37,7 @@ class BroadCastRecieverAct : AppCompatActivity() {
         registerReceiver(batteryData, IntentFilter(Intent.ACTION_BATTERY_CHANGED))
 
         findViewById<Button>(R.id.batterySettings).setOnClickListener {
-            startActivity(Intent(this, ActionOnBroadCastReciever::class.java))
+            startActivity(Intent(this, ActionOnBroadCastReceiver::class.java))
         }
     }
         private fun batteryNotification() {

@@ -8,7 +8,7 @@
 
 
     <Button
-        android:id="@+id/DownLoadBtn"
+        android:id="@+id/downLoadBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="DownLoad File"
@@ -22,7 +22,7 @@
         android:layout_height="wrap_content"
         android:text="Cancel File"
         android:textAllCaps="false"
-        app:layout_constraintStart_toEndOf="@id/DownLoadBtn"
+        app:layout_constraintStart_toEndOf="@id/downLoadBtn"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/urlDownload"/>
 
@@ -33,7 +33,7 @@
         android:ems="15"
         android:hint="Enter Url"
         android:inputType="textUri"
-        app:layout_constraintBottom_toTopOf="@+id/DownLoadBtn"
+        app:layout_constraintBottom_toTopOf="@+id/downLoadBtn"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -43,9 +43,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="60dp"
-        app:layout_constraintEnd_toEndOf="@+id/DownLoadBtn"
-        app:layout_constraintStart_toStartOf="@+id/DownLoadBtn"
-        app:layout_constraintTop_toBottomOf="@+id/DownLoadBtn" />
+        app:layout_constraintEnd_toEndOf="@+id/downLoadBtn"
+        app:layout_constraintStart_toStartOf="@+id/downLoadBtn"
+        app:layout_constraintTop_toBottomOf="@+id/downLoadBtn" />
 
     <ProgressBar
         android:id="@+id/ImgProgressBar"
