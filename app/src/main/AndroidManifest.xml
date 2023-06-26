@@ -49,7 +49,7 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".BroadCastRecieverAct"
+            android:name=".BroadCastReceiverAct"
             android:enabled="true"
             android:exported="true">
             <intent-filter>
@@ -58,8 +58,9 @@
         </activity>
 
         <receiver
-            android:name=".BatteryBroadcastReceiver"
-            android:exported="false" />
+            android:name=".BatteryReceiver"
+            android:exported="false"
+            tools:ignore="Instantiatable" />
 
         <activity
             android:name=".SaveFileAct"
@@ -124,9 +125,7 @@
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
-        <activity
-            android:name=".Koin"
-            android:exported="false" />
+
         <activity
             android:name=".LiveDataDemo"
             android:exported="false" />

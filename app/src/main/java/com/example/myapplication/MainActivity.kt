@@ -104,7 +104,7 @@ class MainActivity : AppCompatActivity() {
             startActivity(Intent(this,SaveFileAct::class.java))
         }
         findViewById<Button>(R.id.broadcastreceiver_btn).setOnClickListener {
-            startActivity(Intent(this,BroadCastRecieverAct::class.java))
+            startActivity(Intent(this,BroadCastReceiverAct::class.java))
         }
         findViewById<Button>(R.id.koin_btn).setOnClickListener {
             startActivity(Intent(this,KoinAct::class.java))
