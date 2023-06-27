@@ -26,6 +26,7 @@ class HomFrag : Fragment(),CommunicateBetweenTwoFragment {
         val frgTitle = view.findViewById<TextView>(R.id.edittext)
         nextPageBtn.setOnClickListener {
             requireActivity().supportFragmentManager.beginTransaction().replace(R.id.frame_layout,AddTextFragment()).addToBackStack("null").commit()
+
         }
         frgTitle.text = arguments?.getString("message")
 
@@ -38,9 +39,5 @@ class HomFrag : Fragment(),CommunicateBetweenTwoFragment {
 
     override fun sendText(msg: String) {
     }
-
-
-
-
 
 }

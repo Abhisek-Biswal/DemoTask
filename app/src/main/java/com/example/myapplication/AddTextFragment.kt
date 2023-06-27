@@ -25,15 +25,7 @@ class AddTextFragment : Fragment() {
             val fragment2 = HomFrag()
             fragment2.arguments = bundle
             requireActivity().supportFragmentManager.beginTransaction().replace(R.id.frame_layout,fragment2).addToBackStack("null").commit()
-
-
         }
-
-
         return transaction
-
     }
-
-
-
 }

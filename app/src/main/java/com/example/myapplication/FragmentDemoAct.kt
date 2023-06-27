@@ -8,7 +8,7 @@ import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class FragmentDemoAct : AppCompatActivity(),CommunicateBetweenTwoFragment {
 
-    lateinit var bottomNavigationBar : BottomNavigationView
+    private lateinit var bottomNavigationBar : BottomNavigationView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -43,11 +43,13 @@ class FragmentDemoAct : AppCompatActivity(),CommunicateBetweenTwoFragment {
     private  fun loadFragment(fragment: Fragment){
         val transaction = supportFragmentManager.beginTransaction()
         transaction.replace(R.id.frame_layout,fragment)
+        transaction.addToBackStack(null)
         transaction.commit()
+
     }
 
     override fun sendText(msg: String) {
-        Toast.makeText(this, msg, Toast.LENGTH_SHORT).show()
+        Toast.makeText(this, "Toast Message from Activity", Toast.LENGTH_SHORT).show()
     }
 
 }
